@@ -13,6 +13,7 @@
 <div class="form">
     <form method="post" action="<c:url value="/login.do"/>">
         <h1>翱翔招聘平台</h1>
+        <h4 style="color:red;">${msg}</h4>
         <div class="mb-3">
             <label for="username" class="form-label">用户邮箱</label>
             <input type="email" id="username" class="form-control" name="email" placeholder="用户邮箱">

@@ -20,10 +20,17 @@ public class LoginController {
 
     @Autowired
     private LoginService loginService;
+
     @RequestMapping("/login")
     public String login(){
-        return "redirect:login.jsp";
+        return "login";
     }
+
+    @RequestMapping("/error")
+    public String error(){
+        return "error";
+    }
+
 
     @RequestMapping("/login.do")
     public String login2(String email, String password, Model model){
@@ -31,8 +38,8 @@ public class LoginController {
         User login = loginService.login(email, password);
         if(login==null){
             model.addAttribute("msg","用户名或密码错误");
-            return "error";
+            return "login";
         }
-        return "/main";
+        return "jobShow/main";
     }
 }

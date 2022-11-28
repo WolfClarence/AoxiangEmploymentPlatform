@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Description:
  */
 public class MainController {
-    @RequestMapping("/main")
+    @RequestMapping("/jsp/main")
     public String main(){
-        return "main";
+        return "jobShow/main";
     }
 }

@@ -25,7 +25,8 @@ public class MyLoginFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         Object userSession = httpServletRequest.getSession().getAttribute("userSession");
         if(userSession == null){
-            httpServletResponse.sendRedirect("/error.jsp");
+            httpServletRequest.setAttribute("msg","请先登录");
+            httpServletRequest.getRequestDispatcher("/error").forward(httpServletRequest,httpServletResponse);
         }else{
             filterChain.doFilter(httpServletRequest,httpServletResponse);
         }
