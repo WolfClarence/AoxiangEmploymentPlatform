@@ -1,7 +1,13 @@
 package com.nwpn.controller;
 
+import com.nwpn.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author GengXuelong
@@ -13,10 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HelloController {
-    @RequestMapping("/hello")
-    public String hello(){
-        System.out.println("你好呀");
 
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping("/hello")
+    public String hello(HttpServletRequest request, HttpServletResponse response, Model model){
+        System.out.println("你好呀");
+        model.addAttribute("msg","耿雪龙页面hello");
         return "hello";
     }
 
