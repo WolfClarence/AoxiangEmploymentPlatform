@@ -9,9 +9,97 @@
 <html>
 <head>
     <title>招聘信息展示页</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet"  href="static/css/myCssForMain.css">
+    <link rel="stylesheet"  href="static/css/common.css">
+    <meta charset="utf-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-    <h1>这里放的全是招聘信息，只有聪明人才能看到</h1>
+<div class="myContainer">
+    <div class="nav">
+        <a href="#">哈哈哈</a>
+        <a href="#">哈哈哈</a>
+        <a href="#">哈哈哈</a>
+    </div>
+    <div class="form">
+        <form style="width: 100%" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="person">
+        <img style="height: 50px; width: 50px;margin-left: 20px" src="static/image/bgMain.jpeg" alt="haha">
+        <a class="navbar-brand" href="#">个人中心</a>
+    </div>
+</div>
 
+<div class="mySmallContainer">
+    <div class="rotation">
+        <img src="static/image/ali.jpg" alt="这应该是一张图片">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+    <div class="jobBlock">
+        <h1>java开发</h1>
+        <h3>薪资：1k-3k</h3>
+        <h3>要求：985硕士及以上</h3>
+        <h3>公司：阿里妈妈</h3>
+    </div>
+</div>
+
+
+<div class="myContainer">
+    <p style="width: 70% ;text-align: center;margin:30px  auto ;">Copyright © 2015-2019 KUFANYUN.COM. All Rights Reserved. 酷番云 云南酷番云计算有限公司 版权所有
+        《中华人民共和国增值电信业务经营许可证》滇B1-20203971    昆公网安备： 53011102000880  滇ICP备18002090号-9  网站地图   </p>
+</div>
 </body>
 </html>
