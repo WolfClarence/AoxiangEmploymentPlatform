@@ -15,11 +15,12 @@ body{
 }
 .bigLabel{
     position: absolute;
-    left: 170px;
-    top: 200px;
-    width: 900px;
-    height: 200px;
-    font-size: 100px;
+    left: 10%;
+    top: 30%;
+    width: 50%;
+    height: 40%;
+    line-height: 3;
+    font-size: 50px;
     font-family: "Bubblegum Sans", serif;
     color: #d07c0d;
 }

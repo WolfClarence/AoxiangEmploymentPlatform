@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @author GengXuelong
  * @version 1.0
@@ -33,13 +36,14 @@ public class LoginController {
 
 
     @RequestMapping("/login.do")
-    public String login2(String email, String password, Model model){
+    public String login2(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model){
         System.out.println(email+"::"+password);
         User login = loginService.login(email, password);
         if(login==null){
             model.addAttribute("msg","用户名或密码错误");
             return "login";
         }
+        request.getSession().setAttribute("userSession",login);
         return "jobShow/main";
     }
 }

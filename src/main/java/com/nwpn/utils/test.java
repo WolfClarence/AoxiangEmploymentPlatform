@@ -1,5 +1,6 @@
 package com.nwpn.utils;
 
+import com.nwpn.mapper.JobMapper;
 import com.nwpn.mapper.UserMapper;
 import com.nwpn.pojo.User;
 import com.nwpn.service.LoginService;
@@ -17,8 +18,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class test {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("springmvc-servlet.xml");
-        UserMapper bean = context.getBean(UserMapper.class);
-        User userByEmail = bean.getUserByEmail("11@qq.com");
-        System.out.println(userByEmail);
+        JobMapper bean = context.getBean(JobMapper.class);
+        System.out.println(bean.getJobs());
     }
 }

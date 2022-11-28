@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nwpn.mapper.JobMapper">
+    <resultMap id="jobMap" type="job">
+        <association property="uploader" column="uploaderEmail" javaType="user" select="selectUserByEmail" />
+        <association property="kind" column="categoryId" javaType="string" select="selectKindById" />
+    </resultMap>
+    <select id="selectUserByEmail" resultType="user">
+        select * from user where email = #{uploaderEmail}
+    </select>
+
+    <select id="selectKindById" resultType="string">
+        select name from kind where id = #{categoryId}
+    </select>
+    <select id="getJobs" resultMap="jobMap">
+        select * from job
+    </select>
+
+
+
+</mapper>

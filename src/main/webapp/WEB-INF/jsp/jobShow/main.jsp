@@ -98,7 +98,7 @@
 
 
 <div class="myContainer">
-    <p style="width: 70% ;text-align: center;margin:30px  auto ;">Copyright © 2015-2019 KUFANYUN.COM. All Rights Reserved. 酷番云 云南酷番云计算有限公司 版权所有
+    <p style="width: 50% ;text-align: center;margin:10px  auto ;">Copyright © 2015-2019 KUFANYUN.COM. All Rights Reserved. 酷番云 云南酷番云计算有限公司 版权所有
         《中华人民共和国增值电信业务经营许可证》滇B1-20203971    昆公网安备： 53011102000880  滇ICP备18002090号-9  网站地图   </p>
 </div>
 </body>
