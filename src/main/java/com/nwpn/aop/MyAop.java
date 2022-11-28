@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyAop {
-    @Pointcut("execution(* com.nwpn.controller.HelloController.*(..))")
+    @Pointcut("execution(* com.nwpn.controller.*.*(..))")
     public void where(){}
 
     @Before("where()")

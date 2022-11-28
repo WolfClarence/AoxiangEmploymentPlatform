@@ -19,11 +19,11 @@ public class MyEncodingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("进入encoding过滤器");
+//        System.out.println("进入encoding过滤器");
         servletRequest.setCharacterEncoding("utf-8");
         servletResponse.setCharacterEncoding("utf-8");
         filterChain.doFilter(servletRequest,servletResponse);
-        System.out.println("出encoding过滤器");
+//        System.out.println("出encoding过滤器");
     }
 
     @Override

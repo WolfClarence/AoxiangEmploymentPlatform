@@ -24,4 +24,9 @@ public class UserMapperImpl  implements UserMapper {
     public List<User> getUsers() {
         return sqlSessionTemplate.getMapper(UserMapper.class).getUsers();
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return sqlSessionTemplate.getMapper(UserMapper.class).getUserByEmail(email);
+    }
 }
