@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
@@ -46,56 +47,14 @@
             <div class="dot"></div>
         </div>
     </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-    <div class="jobBlock">
-        <h1>java开发</h1>
-        <h3>薪资：1k-3k</h3>
-        <h3>要求：985硕士及以上</h3>
-        <h3>公司：阿里妈妈</h3>
-    </div>
-</div>
-
+    <c:forEach items="${jobs}" var="job" varStatus="jobStatus">
+        <div class="jobBlock">
+            <h1>${job.getName()}</h1>
+            <h3>薪资：${job.getMin_salary()}-${job.getMax_salary()}</h3>
+            <h3>要求：${job.getLimit_condition()}</h3>
+            <h3>公司：${job.getCompany()}</h3>
+        </div>
+    </c:forEach>
 
 <div class="myContainer">
     <p style="width: 50% ;text-align: center;margin:10px  auto ;">Copyright © 2015-2019 KUFANYUN.COM. All Rights Reserved. 酷番云 云南酷番云计算有限公司 版权所有

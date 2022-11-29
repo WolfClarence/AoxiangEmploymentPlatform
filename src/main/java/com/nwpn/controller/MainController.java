@@ -1,5 +1,6 @@
 package com.nwpn.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @ClassName MainController
  * @Description:
  */
+@Controller
 public class MainController {
     @RequestMapping("/jsp/main")
     public String main(){

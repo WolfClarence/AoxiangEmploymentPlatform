@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author GengXuelong
@@ -36,14 +38,16 @@ public class LoginController {
 
 
     @RequestMapping("/login.do")
-    public String login2(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model){
+    public String login2(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model) throws ServletException, IOException {
         System.out.println(email+"::"+password);
-        User login = loginService.login(email, password);
+//        User login = loginService.login(email, password);
+        User login = new User();
         if(login==null){
             model.addAttribute("msg","用户名或密码错误");
             return "login";
         }
         request.getSession().setAttribute("userSession",login);
-        return "jobShow/main";
+        request.getRequestDispatcher("/main.do").forward(request,response);
+        return null;
     }
 }
