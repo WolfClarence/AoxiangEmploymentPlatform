@@ -40,8 +40,7 @@ public class LoginController {
     @RequestMapping("/login.do")
     public String login2(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model) throws ServletException, IOException {
         System.out.println(email+"::"+password);
-//        User login = loginService.login(email, password);
-        User login = new User();
+        User login = loginService.login(email, password);
         if(login==null){
             model.addAttribute("msg","用户名或密码错误");
             return "login";
