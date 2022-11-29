@@ -29,7 +29,7 @@ public class AdminController {
     @PostMapping("admin/login.do")
     public String admin_login_do(HttpServletRequest request, HttpServletResponse response, Model model, String email, String password){
         System.out.println("admin:"+email+";;;"+password);
-        boolean f = false;
+        boolean f = true;
         if(!f){
             model.addAttribute("msg","密码或用户名错误");
             return "adminPage/adminLogin";

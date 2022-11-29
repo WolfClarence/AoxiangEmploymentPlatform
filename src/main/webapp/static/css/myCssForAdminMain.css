@@ -1,0 +1,85 @@
+body{
+    background: url("../image/adminMainBg.jpg") repeat-y ;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+.main{
+    float: right;
+    background-color: aqua;
+    width: 85%;
+    height: 100%;
+    opacity: 90%;
+}
+.blank{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 620px;
+}
+
+.top_nav{
+    width: 100%;
+    height: 80px;
+    background-color: blueviolet;
+}
+.top_nav ul{
+    float: left;
+    width: 600px;
+    height: 100%;
+    margin-left: 40px;
+}
+.top_nav li{
+    width: 90px;
+    height: 100%;
+    background-color: aliceblue;
+    line-height: 80px;
+    text-align: center;
+    float: left;
+    margin-right: 40px;
+}
+.top_nav .person{
+    float: right;
+    width: 200px;
+    height: 100%;
+    background-color: pink;
+    text-align: center;
+    line-height: 80px;
+}
+
+
+
+.left_nav{
+    float: left;
+    background-color: pink;
+    width: 15%;
+    height: 100%;
+    opacity: 90%;
+    overflow: hidden;
+}
+.left_nav li{
+    width: 100% !important;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: #d07c0d;
+    margin-bottom: 10px ;
+    font-size: 40px;
+}
+
+
+.left_nav .bigLabel{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #3e6de5;
+    margin-bottom: 10px ;
+    font-size: 50px;
+}
+
+.footer{
+    width: 100%;
+    background-color: #d07c0d;
+    height: 70px;
+
+}

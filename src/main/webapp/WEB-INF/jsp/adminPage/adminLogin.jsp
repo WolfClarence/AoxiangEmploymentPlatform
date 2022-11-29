@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="form">
-    <form method="post" action="<c:url value="/login.do"/>">
+    <form method="post" action="<c:url value="/admin/login.do"/>">
         <div style="width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 40px">管理员登录页</div>
         <h4 style="color:red;">${msg}</h4>
         <div class="mb-3">
