@@ -14,7 +14,7 @@
 
 <script>
     window.onload = function(){
-        window.location.href= "http://localhost:8080/admin";
+        window.location.href= "http://localhost:8080/login";
     }
 
 </script>

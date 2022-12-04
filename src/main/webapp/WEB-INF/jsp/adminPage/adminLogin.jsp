@@ -42,12 +42,6 @@
                     <input type="password" name="username" placeholder="请输入密码 " required=""
                            autocomplete="off"/>
                 </div>
-                <p class="p-bottom">
-                    没有翱翔招聘平台账号?
-                    <a style="color: #5cb85c" href="#">
-                        点击注册
-                    </a>
-                </p>
                 <input type="submit" value="Login">
             </form>
         </div>
