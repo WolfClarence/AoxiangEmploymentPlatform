@@ -17,17 +17,17 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/common.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/myCssForAdminLogin.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/login.css">
     <meta charset="utf-8">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <c:out value="${pageContext.request.contextPath}/static/css/myCssForAdminLogin.css"/>
-    <div class="main-agileits">
+    <div class="div-out-login">
         <!--form-stars-here-->
-        <div class="form-agile">
+        <div class="form-out">
             <h2>翱翔招聘平台</h2>
-            <form action="#" method="post">
+            <form action="/admin/login.do" method="post">
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>

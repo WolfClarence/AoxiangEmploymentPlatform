@@ -18,13 +18,21 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class AdminController {
-    @RequestMapping("admin/jsp/main")
-    public String adminMain(){
-        return "adminPage/adminMain";
-    }
     @RequestMapping("admin")
     public String adminLogin(){
         return "adminPage/adminLogin";
+    }
+    @RequestMapping("admin/jobinfo")
+    public String adminJobInformation(){
+        return "adminPage/adminJobInformation";
+    }
+    @RequestMapping("admin/employee")
+    public String adminEmployee(){
+        return "adminPage/adminEmployee";
+    }
+    @RequestMapping("admin/account")
+    public String adminAccount(){
+        return "adminPage/adminAccountManage";
     }
     @PostMapping("admin/login.do")
     public String admin_login_do(HttpServletRequest request, HttpServletResponse response, Model model, String email, String password){
@@ -35,6 +43,6 @@ public class AdminController {
             return "adminPage/adminLogin";
         }
         request.getSession().setAttribute("adminSession","耿雪龙");
-        return "adminPage/adminMain";
+        return "adminPage/adminJobInformation";
     }
 }
