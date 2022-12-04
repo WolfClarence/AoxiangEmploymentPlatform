@@ -12,23 +12,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author GengXuelong
- * @version 1.0
- * @Mail 3349495429@qq.com
- * @Date 2022/11/28
- * @ClassName LoginController
- * @Description:
- */
 @Controller
-public class LoginController {
-
+public class UserController {
     @Autowired
     private LoginService loginService;
 
     @RequestMapping("/login")
     public String login(){
-        return "login";
+        return "userPage/userLogin";
+    }
+    @RequestMapping("/register")
+    public String registry(){
+        return "userPage/userRegister";
+    }
+    @RequestMapping("/job")
+    public String job(){
+        return "userPage/userJobInformation";
+    }
+    @RequestMapping("/application")
+    public String application(){
+        return "userPage/userApplication";
+    }
+    @RequestMapping("/resume")
+    public String resume(){
+        return "userPage/userResume";
     }
 
     @RequestMapping("/error")
@@ -43,10 +50,10 @@ public class LoginController {
         User login = loginService.login(email, password);
         if(login==null){
             model.addAttribute("msg","用户名或密码错误");
-            return "login";
+            return "userPage/userLogin";
         }
         request.getSession().setAttribute("userSession",login);
-        request.getRequestDispatcher("/main.do").forward(request,response);
+        request.getRequestDispatcher("/job").forward(request,response);
         return null;
     }
 }
