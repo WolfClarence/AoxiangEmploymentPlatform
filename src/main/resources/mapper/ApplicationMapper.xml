@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nwpn.mapper.ApplicationMapper">
+
+    <select id="getApplicationByOwner_email" resultMap="applicationMap">
+        select * from application where owner_email = #{email}
+    </select>
+    <resultMap id="applicationMap" type="application">
+        <result property="id" column="id"/>
+        <result property="owner_email" column="owner_email"/>
+        <result property="status" column="status"/>
+        <association property="job" column="job_id" javaType="job" select="selectJobById"/>
+    </resultMap>
+    <select id="selectJobById" parameterType="int" resultType="job">
+        select * from job where id = #{job_id}
+    </select>
+    <insert id="insert" parameterType="application">
+        insert into application value (#{id},#{owner_email},#{job.getId()},#{status})
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from application where id = #{id}
+    </delete>
+    <update id="update" parameterType="string">
+        update application where id = #{id} set status= #{status}
+    </update>
+
+
+</mapper>

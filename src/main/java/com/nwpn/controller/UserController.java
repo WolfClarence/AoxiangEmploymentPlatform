@@ -37,7 +37,6 @@ public class UserController {
     public String resume(){
         return "userPage/userResume";
     }
-
     @RequestMapping("/error")
     public String error(){
         return "error";

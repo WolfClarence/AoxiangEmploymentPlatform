@@ -35,14 +35,14 @@
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     </div>
-                    <input type="email" name="username" placeholder="请输入用户名 " required=""
+                    <input type="email" name="email" placeholder="请输入用户邮箱 " required=""
                            autocomplete="off"/>
                 </div>
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>
                     </div>
-                    <input type="password" name="username" placeholder="请输入密码 " required=""
+                    <input type="password" name="password" placeholder="请输入密码 " required=""
                            autocomplete="off"/>
                 </div>
                 <p class="p-bottom">

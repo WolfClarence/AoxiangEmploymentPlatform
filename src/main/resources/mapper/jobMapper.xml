@@ -3,21 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nwpn.mapper.JobMapper">
-    <resultMap id="jobMap" type="job">
-        <association property="uploader" column="uploaderEmail" javaType="user" select="selectUserByEmail" />
-        <association property="kind" column="categoryId" javaType="string" select="selectKindById" />
-    </resultMap>
-    <select id="selectUserByEmail" resultType="user">
-        select * from user where email = #{uploaderEmail}
-    </select>
 
-    <select id="selectKindById" resultType="string">
-        select name from kind where id = #{categoryId}
-    </select>
-    <select id="getJobs" resultMap="jobMap">
+    <select id="getJobs" resultType="job">
         select * from job
     </select>
 
+    <select id="getJobByLikedName" resultType="job">
+        select * from job where name like "%"#{name}"%"
+    </select>
 
+    <insert id="insert" parameterType="job">
+        insert into job value (#{id},#{name},#{min_salary},#{max_salary},#{description},#{area},#{limit_condition})
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from job where id = #{id}
+    </delete>
+    <update id="update" parameterType="job">
+        update job where id = #{id} set id=#{id},name=#{name},min_salary=#{min_salary},max_salary=#{max_salary},description=#{description},area=#{area},limit_condition=#{limit_condition}
+    </update>
 
 </mapper>

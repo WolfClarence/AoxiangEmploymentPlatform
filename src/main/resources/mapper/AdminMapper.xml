@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nwpn.mapper.AdminMapper">
+   <select id="getAdmins" resultType="admin">
+       select * from admin
+   </select>
+    <select id="getAdminByName" resultType="admin" parameterType="string">
+        select * from admin where name = #{name}
+    </select>
+    <insert id="insert" parameterType="admin">
+        insert into admin value (#{name},#{password})
+    </insert>
+    <delete id="delete" parameterType="string">
+        delete from admin where name = #{name}
+    </delete>
+    <update id="update" parameterType="string">
+        update admin where name = #{name} set password= #{password}
+    </update>
+</mapper>

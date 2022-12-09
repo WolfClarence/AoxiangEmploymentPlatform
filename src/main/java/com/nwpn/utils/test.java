@@ -1,9 +1,6 @@
 package com.nwpn.utils;
 
-import com.nwpn.mapper.JobMapper;
-import com.nwpn.mapper.UserMapper;
-import com.nwpn.pojo.User;
-import com.nwpn.service.LoginService;
+import com.nwpn.mapper.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +15,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class test {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("springmvc-servlet.xml");
-        JobMapper bean = context.getBean(JobMapper.class);
-        System.out.println(bean.getJobs());
+        AdminMapper adminMapper = context.getBean(AdminMapper.class);
+        UserMapper userMapper = context.getBean(UserMapper.class);
+        JobMapper jobMapper = context.getBean(JobMapper.class);
+        ResumeMapper resumeMapper = context.getBean(ResumeMapper.class);
+        ApplicationMapper applicationMapper = context.getBean(ApplicationMapperImpl.class);
+        System.out.println(jobMapper.getJobByLikedName(""));
     }
 }

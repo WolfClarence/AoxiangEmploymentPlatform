@@ -15,4 +15,7 @@ import java.util.List;
 public interface UserMapper {
     List<User> getUsers();
     User getUserByEmail(String email);
+    int insert(User user);
+    int delete(String email);
+    int update(User user);
 }

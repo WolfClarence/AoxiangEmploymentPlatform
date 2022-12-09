@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nwpn.mapper.ResumeMapper">
+    <select id="getResumeByOwner_email" parameterType="string" resultType="resume">
+        select * from resume where owner_email = #{owner_email}
+    </select>
+    <insert id="insert" parameterType="resume">
+        insert into resume value (#{owner_email},#{name},#{sex},#{nation},#{age},#{profession},#{intention},#{school},#{phone},#{email},#{skill},#{award},#{practice},#{description})
+    </insert>
+    <delete id="delete" parameterType="string">
+        delete from resume where owner_email = #{email}
+    </delete>
+    <update id="update" parameterType="resume">
+        update resume where owner_email = #{owner_email} set owner_email=#{owner_email},name=#{name},sex=#{sex},nation=#{nation},age=#{age},profession=#{profession},intention=#{intention},school=#{school},phone=#{phone},email=#{email},skill=#{skill},award=#{award},practice=#{practice},description=#{description}
+    </update>
+
+
+
+</mapper>

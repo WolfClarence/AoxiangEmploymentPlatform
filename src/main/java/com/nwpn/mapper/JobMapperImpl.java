@@ -24,4 +24,30 @@ public class JobMapperImpl implements JobMapper{
     public List<Job> getJobs() {
         return sqlSessionTemplate.getMapper(JobMapper.class).getJobs();
     }
+
+    @Override
+    public Job getJobById(int id) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).getJobById(id);
+
+    }
+
+    @Override
+    public List<Job> getJobByLikedName(String name) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).getJobByLikedName(name);
+    }
+
+    @Override
+    public int insert(Job job) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).insert(job);
+    }
+
+    @Override
+    public int delete(int id) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).delete(id);
+    }
+
+    @Override
+    public int update(Job job) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).update(job);
+    }
 }

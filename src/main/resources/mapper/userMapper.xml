@@ -12,4 +12,14 @@
         select * from `user` where `email` = #{email};
     </select>
 
+    <insert id="insert" parameterType="user">
+        insert into user value (#{email},#{name},#{password})
+    </insert>
+    <delete id="delete" parameterType="string">
+        delete from user where email = #{email}
+    </delete>
+    <update id="update" parameterType="user">
+        update user where email = #{email} set email=#{email},name=#{name},password=#{password};
+    </update>
+
 </mapper>
