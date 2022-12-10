@@ -22,6 +22,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
+<c:import url="../component/banner.jsp"/>
 <div class="container">
     <div class="div-out-login">
         <!--form-stars-here-->
@@ -32,7 +33,7 @@
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     </div>
-                    <input type="email" name="username" placeholder="请输入用户名 " required=""
+                    <input type="email" name="username" placeholder="请输入管理员邮箱" required=""
                            autocomplete="off"/>
                 </div>
                 <div class="form-sub">
@@ -51,6 +52,7 @@
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>
+<c:import url="../component/footer.jsp"/>
 </body>
 </html>
 

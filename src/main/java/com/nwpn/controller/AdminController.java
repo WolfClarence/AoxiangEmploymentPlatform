@@ -43,6 +43,8 @@ public class AdminController {
             return "adminPage/adminLogin";
         }
         request.getSession().setAttribute("adminSession","耿雪龙");
+        //请后端想办法通过邮箱得到用户名并且赋值给username，用来给banner传参
+        //request.getSession().setAttribute("username","dick");
         return "adminPage/adminJobInformation";
     }
 }
