@@ -32,12 +32,6 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/employee">
-                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
-                    应聘人员
-                </a>
-            </li>
-            <li>
                 <a href="/admin/account">
                     <i class="glyphicon glyphicon-tasks" aria-hidden="true"></i>
                     账号管理
@@ -88,7 +82,7 @@
         <ul class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
                 <li class="show-list-item">
-                    <a href="">
+                    <a href="/admin/jobdetail/${job.id}">
                         <label>
                                 ${job.area} ${job.kind} ${job.company}
                         </label>

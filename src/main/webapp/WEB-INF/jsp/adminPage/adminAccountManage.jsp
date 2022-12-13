@@ -32,12 +32,6 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/employee">
-                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
-                    应聘人员
-                </a>
-            </li>
-            <li>
                 <a class="active">
                     <i class="glyphicon glyphicon-tasks" aria-hidden="true"></i>
                     账号管理
