@@ -51,7 +51,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
-
+        ${userList}
     </div>
 </div>
 

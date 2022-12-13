@@ -28,19 +28,19 @@
         <!--form-stars-here-->
         <div class="form-out">
             <h2>翱翔招聘平台</h2>
-            <form action="/admin/login.do" method="post">
+            <form action="<c:url value="/admin/login.do"/>" method="post">
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     </div>
-                    <input type="email" name="username" placeholder="请输入管理员邮箱" required=""
+                    <input type="text" name="name" placeholder="请输入管理员姓名" required=""
                            autocomplete="off"/>
                 </div>
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-lock" aria-hidden="true"></i>
                     </div>
-                    <input type="password" name="username" placeholder="请输入密码 " required=""
+                    <input type="password" name="password" placeholder="请输入密码 " required=""
                            autocomplete="off"/>
                 </div>
                 <input type="submit" value="Login">

@@ -52,7 +52,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
-
+        ${jobList}
     </div>
 </div>
 

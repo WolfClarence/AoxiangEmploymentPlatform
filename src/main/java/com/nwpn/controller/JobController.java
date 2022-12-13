@@ -1,7 +1,6 @@
 package com.nwpn.controller;
 
 import com.nwpn.pojo.Job;
-import com.nwpn.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +21,11 @@ import java.util.List;
  */
 @Controller
 public class JobController {
-    @Autowired
-    private JobService jobService;
-    @RequestMapping("/main.do")
-    public void main_do(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Job> jobs = jobService.getJobs();
-        request.setAttribute("jobs",jobs);
-        request.getRequestDispatcher("/jsp/main").forward(request,response);
-    }
+
+//    @RequestMapping("/main.do")
+//    public void main_do(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        List<Job> jobs = jobService.getJobs();
+//        request.setAttribute("jobs",jobs);
+//        request.getRequestDispatcher("/jsp/main").forward(request,response);
+//    }
 }

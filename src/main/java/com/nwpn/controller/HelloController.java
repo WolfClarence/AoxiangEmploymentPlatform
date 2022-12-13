@@ -1,6 +1,5 @@
 package com.nwpn.controller;
 
-import com.nwpn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class HelloController {
 
-    @Autowired
-    private UserService userService;
+
 
     @RequestMapping("/hello")
     public String hello(HttpServletRequest request, HttpServletResponse response, Model model){
