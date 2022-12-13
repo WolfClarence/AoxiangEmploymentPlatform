@@ -58,14 +58,24 @@
                     <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">类型:</div>
                     <div class="col-lg-2">
                         <select name="type" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
-                            <c:forEach var="typeItem" items="${typeList}">
-                                <option value="${typeItem}">${typeItem}</option>
+                            <c:forEach var="typeItem" items="${kindList}">
+                                <option value="${kindItem}">${kindItem}</option>
                             </c:forEach>
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">地点:</div>
+                    <div class="col-lg-2" >
+                        <select name="place" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                            <c:forEach var="areaItem" items="${areaList}">
+                                <option value="${areaItem}">${areaItem}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">关键字:</div>
                     <div class="col-lg-2" >
                         <select name="place" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
                             <c:forEach var="areaItem" items="${areaList}">
