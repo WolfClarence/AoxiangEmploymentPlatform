@@ -71,7 +71,6 @@ input::placeholder{
     -webkit-appearance: none;
     margin-bottom: 30px;
     background: transparent;
-
 }
 
 .form-sub input[type="text"]{
@@ -86,7 +85,6 @@ input::placeholder{
     -webkit-appearance: none;
     margin-bottom: 30px;
     background: transparent;
-
 }
 
 .form-sub input[type="password"] {

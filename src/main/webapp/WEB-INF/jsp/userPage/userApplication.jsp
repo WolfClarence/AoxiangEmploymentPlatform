@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -51,9 +52,33 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        ${applicationList}
+        <ul class="list-unstyled">
+            <c:forEach items="${applicationList}" var="application">
+                <li class="show-list-item">
+                    <div>
+                        <span>${application.job.name} ${application.job.company} ${application.job.area} </span>
+                        <span style="position:fixed;right: 50px">${application.status}</span>
+                    </div>
+                </li>
+            </c:forEach>
+        </ul>
     </div>
 </div>
 
 </body>
+<style>
+    .show-list-item{
+        font-size: 20px;
+        color: #4cae4c;
+        margin: 8px;
+    }
+    .show-list-item div{
+        background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;
+        width: 100%;
+        height: 50px;
+        color: #5bc0de;
+        padding: 10px;
+        font-size: 25px;
+    }
+</style>
 </html>

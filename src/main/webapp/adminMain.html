@@ -10,15 +10,41 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="index-banner-top">
+<ul class="list-unstyled">
+    <li class="show-list-item">
+        <div>
+            <span>1 2 3</span>
+            <span style="position:fixed;right: 20px">处理中</span>
+        </div>
+    </li>
+    <li class="show-list-item">
+        <div>
+            <span>1 2 3</span>
+            <span style="position:fixed;right: 20px">处理中</span>
+        </div>
+    </li>
+    <li class="show-list-item">
+        <div>
+            <span>1 2 3</span>
+            <span style="margin-right: 5px">处理中</span>
+        </div>
+    </li>
+</ul>
 
-    </div>
 </body>
 <style>
-    .index-banner-top {
+    .show-list-item{
+        font-size: 20px;
+        color: #4cae4c;
+        margin: 8px;
+    }
+    .show-list-item div{
+        background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;
         width: 100%;
-        background: url("static/image/banner.png") center/cover;
         height: 50px;
+        color: #2dc9d7;
+        padding: 10px;
+        font-size: 25px;
     }
 </style>
 </html>

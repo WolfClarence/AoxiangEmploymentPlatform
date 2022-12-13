@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -51,9 +52,69 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        ${jobList}
+        <form method="get">
+            <div class="row" style="margin-top: 10px">
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>
+                    <div class="col-md-1">
+                        <select name="kind" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                            <c:forEach var="kindItem" items="${kindList}">
+                                <option value="${kindItem}">${kindItem}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">地点:</div>
+                    <div class="col-md-1" >
+                        <select name="area" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                            <c:forEach var="areaItem" items="${areaList}">
+                                <option value="${areaItem}">${areaItem}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">关键字:</div>
+                    <div class="col-md-1" >
+                        <input name="keyword" class="form-control" style="width: 200px">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn" style="color: white;background: #5bc0de;margin-left: 20px" value="查询">
+                </div>
+            </div>
+        </form>
+        <ul class="list-unstyled">
+            <c:forEach items="${jobList}" var="job">
+                <li class="show-list-item">
+                    <a href="/jobdetail/${job.id}">
+                        <label>
+                                ${job.area} ${job.kind} ${job.company}
+                        </label>
+                    </a>
+                </li>
+            </c:forEach>
+        </ul>
     </div>
 </div>
-
 </body>
+<style>
+    body{
+        color: black;
+    }
+    .show-list-item{
+        font-size: 20px;
+        color: #4cae4c;
+        margin: 8px;
+    }
+    .show-list-item a label{
+        background: linear-gradient(to right,royalblue,plum) center/cover;
+        width: 100%;
+        height: 50px;
+        color: #5bc0de;
+        padding: 10px;
+        font-size: 25px;
+    }
+</style>
 </html>

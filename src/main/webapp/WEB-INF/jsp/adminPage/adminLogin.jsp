@@ -54,5 +54,20 @@
 </div>
 <c:import url="../component/footer.jsp"/>
 </body>
+<style>
+    .form-sub input[type="text"]{
+        outline: none;
+        font-size: 15px;
+        color: #ffffff;
+        padding: 15px 20px 5px 20px;
+        width: 87%;
+        border: none;
+        margin-left: 12px;
+        border-bottom: 1px solid #DCCBCF;
+        -webkit-appearance: none;
+        margin-bottom: 30px;
+        background: transparent;
+    }
+</style>
 </html>
 
