@@ -51,7 +51,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
-
+        ${resume}
     </div>
 </div>
 

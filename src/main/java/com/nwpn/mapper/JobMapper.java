@@ -16,6 +16,8 @@ import java.util.List;
 public interface JobMapper {
     List<Job> getJobs();
     Job getJobById(int id);//一般和修改函数相配合使用
+    Job getJobByKind(String kind);
+
     List<Job> getJobByLikedName(String name);//用于搜索,模糊搜索
     int insert(Job job);
     int delete(int id);

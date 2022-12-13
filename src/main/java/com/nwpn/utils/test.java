@@ -20,6 +20,7 @@ public class test {
         JobMapper jobMapper = context.getBean(JobMapper.class);
         ResumeMapper resumeMapper = context.getBean(ResumeMapper.class);
         ApplicationMapper applicationMapper = context.getBean(ApplicationMapperImpl.class);
-        System.out.println(jobMapper.getJobByLikedName(""));
+        KindMapper kindMapper = context.getBean(KindMapper.class);
+        System.out.println(kindMapper.insert("IT"));
     }
 }

@@ -32,6 +32,12 @@ public class JobMapperImpl implements JobMapper{
     }
 
     @Override
+    public Job getJobByKind(String kind) {
+        return sqlSessionTemplate.getMapper(JobMapper.class).getJobByKind(kind);
+
+    }
+
+    @Override
     public List<Job> getJobByLikedName(String name) {
         return sqlSessionTemplate.getMapper(JobMapper.class).getJobByLikedName(name);
     }

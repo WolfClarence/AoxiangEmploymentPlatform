@@ -21,9 +21,9 @@ public class Job {
     private int min_salary;
     private int max_salary;
     private String description;
-//    private String company;
+    private String company;
 //    private User uploader;
     private String area;
-//    private String kind;
+    private String kind;
     private String limit_condition;
 }
