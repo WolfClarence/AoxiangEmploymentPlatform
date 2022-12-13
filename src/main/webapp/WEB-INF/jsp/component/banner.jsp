@@ -19,10 +19,8 @@
 <style>
     .index-banner-top {
         width: 100%;
-        background: green no-repeat center center;
-        height: 210px;
-        background-size: cover
-
+        background: url("../../../static/image/banner.png") center/cover;
+        height: 50px;
     }
 </style>
 </html>

@@ -19,7 +19,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+<c:import url="../component/banner.jsp"/>
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">管理员菜单</div>
@@ -54,6 +54,6 @@
         ${userList}
     </div>
 </div>
-
+<c:import url="../component/footer.jsp"/>
 </body>
 </html>

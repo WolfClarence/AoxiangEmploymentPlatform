@@ -7,27 +7,27 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
 <head>
     <title>Title</title>
 </head>
 <body>
-<div class="modal-footer my-footer">
-    copyright by group 17
-    联系我们：2063980370@qq.com
+<div class="my-footer">
+    <p>copyright by group 17</p>
+    <p>联系我们：2063980370@qq.com</p>
 </div>
 </body>
 <style>
     .my-footer{
         position: fixed;
-        left: 0;
-        bottom: 25px;
         width: 100%;
-        height: 50px;
-        line-height:50px;
-        text-align:center;
-        color: #ded9d9;
+        bottom: 0;
+        left: 0;
+        height: 52px;
+        background:linear-gradient(to right,#4cae4c,#5bc0de);
     }
-
+    p{
+        margin: 8px;
+        text-align: center;
+    }
 </style>
 </html>

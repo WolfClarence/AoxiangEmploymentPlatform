@@ -28,12 +28,12 @@
         <!--form-stars-here-->
         <div class="form-out">
             <h2>翱翔招聘平台</h2>
-            <form action="<c:url value="/admin/login.do"/>" method="post">
+            <form action="/admin/login.do" method="post">
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     </div>
-                    <input type="text" name="name" placeholder="请输入管理员姓名" required=""
+                    <input type="text" name="name" placeholder="请输入管理员用户名" required=""
                            autocomplete="off"/>
                 </div>
                 <div class="form-sub">
