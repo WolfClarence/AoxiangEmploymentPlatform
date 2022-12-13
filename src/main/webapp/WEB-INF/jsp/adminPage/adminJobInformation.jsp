@@ -54,38 +54,34 @@
     <div class="content content-is-open">
         <form method="get">
             <div class="row" style="margin-top: 10px">
-                <div class="col-lg-4">
-                    <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">类型:</div>
-                    <div class="col-lg-2">
-                        <select name="type" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>
+                    <div class="col-md-1">
+                        <select name="kind" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
                             <c:forEach var="kindItem" items="${kindList}">
                                 <option value="${kindItem}">${kindItem}</option>
                             </c:forEach>
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">地点:</div>
-                    <div class="col-lg-2" >
-                        <select name="place" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">地点:</div>
+                    <div class="col-md-1" >
+                        <select name="area" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
                             <c:forEach var="areaItem" items="${areaList}">
                                 <option value="${areaItem}">${areaItem}</option>
                             </c:forEach>
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="col-lg-2" style="font-size: 20px;padding-top: 5px">关键字:</div>
-                    <div class="col-lg-2" >
-                        <select name="place" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
-                            <c:forEach var="areaItem" items="${areaList}">
-                                <option value="${areaItem}">${areaItem}</option>
-                            </c:forEach>
-                        </select>
+                <div class="col-md-3">
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">关键字:</div>
+                    <div class="col-md-1" >
+                        <input name="keyword" class="form-control" style="width: 200px">
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <input type="submit" class="btn btn-lg" style="color: white;background: #5bc0de" value="查询">
+                <div class="col-md-2">
+                    <input type="submit" class="btn" style="color: white;background: #5bc0de;margin-left: 20px" value="查询">
                 </div>
             </div>
         </form>
