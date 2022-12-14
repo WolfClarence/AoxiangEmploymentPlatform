@@ -113,9 +113,7 @@
                 <a href="/resume" style="margin-left: 20px">
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                 </a>
-
             </div>
-
         </form>
 
     </div>

@@ -90,7 +90,7 @@
                 <li class="show-list-item">
                     <a href="/jobdetail/${job.id}">
                         <label>
-                                ${job.area} ${job.kind} ${job.company}
+                                ${job.area} ${job.kind} ${job.company} ${job.name}
                         </label>
                     </a>
                 </li>
