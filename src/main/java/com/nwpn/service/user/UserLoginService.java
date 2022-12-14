@@ -33,4 +33,24 @@ public class UserLoginService {
         }
         return null;
     }
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     by email to get user from datasource
+     */
+    public User getUserByEmailFromDao(String email) {
+        return userMapper.getUserByEmail(email);
+    }
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     insert a user to datasource
+     */
+    public int addUserToDao(User user1) {
+        return userMapper.insert(user1);
+    }
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -25,7 +26,8 @@
         <!--form-stars-here-->
         <div class="form-out">
             <h2>翱翔招聘平台</h2>
-            <form action="" method="post">
+            <form action="<c:url value="/register.do"/>" method="post">
+                <p style="color: red">${msg}</p>
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
