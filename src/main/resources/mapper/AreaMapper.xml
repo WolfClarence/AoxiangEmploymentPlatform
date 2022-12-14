@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nwpn.mapper.AreaMapper">
+
+    <select id="getAreas" resultType="string">
+        select * from area
+    </select>
+
+    <insert id="insert" parameterType="string">
+        insert into area value (#{kind})
+    </insert>
+    <delete id="delete" parameterType="string">
+        delete from area where name = #{kind}
+    </delete>
+    <update id="update" parameterType="string">
+        update area where name = #{oldArea} set name=#{newArea}
+    </update>
+</mapper>
