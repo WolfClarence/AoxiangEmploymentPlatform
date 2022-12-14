@@ -51,9 +51,62 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        ${resume}
+        <div class="resume-body">
+            <p class="resume-item">
+                姓名：${resume.name}
+            </p>
+            <p class="resume-item">
+                年龄：${resume.age}
+            </p>
+            <p class="resume-item">
+                性别：${resume.sex}
+            </p>
+            <p class="resume-item">
+                民族：${resume.nation}
+            </p>
+            <p class="resume-item">
+                专业：${resume.profession}
+            </p>
+            <p class="resume-item">
+                求职意向：${resume.intention}
+            </p>
+            <p class="resume-item">
+                毕业院校：${resume.school}
+            </p>
+            <p class="resume-item">
+                手机号：${resume.phone}
+            </p>
+            <p class="resume-item">
+                邮箱：${resume.email}
+            </p>
+            <p class="resume-item">
+                技能：${resume.skill}
+            </p>
+            <p class="resume-item">
+                奖项：${resume.award}
+            </p>
+            <p class="resume-item">
+                社会实践：${resume.practice}
+            </p>
+            <p class="resume-item">
+                自我描述：${resume.description}
+            </p>
+        </div>
+        <div style="margin: 10px">
+            <a href="/resume/edit">
+                <button class="btn" style="color: white;background: #5bc0de;margin: auto">编辑资料</button>
+            </a>
+        </div>
     </div>
 </div>
-
 </body>
+<style>
+    .resume-body{
+        color: black;
+        font:15px arial,sans-serif;
+    }
+    .resume-item{
+        margin: 10px;
+    }
+</style>
 </html>

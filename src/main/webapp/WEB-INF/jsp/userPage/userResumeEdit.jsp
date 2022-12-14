@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<!--该文件仅用于测试-->
+<%--
+  Created by IntelliJ IDEA.
+  User: LonelyWolf
+  Date: 2022/12/4
+  Time: 16:15
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>招聘信息</title>
-    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="static/css/navigation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
     <meta charset="utf-8">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
@@ -104,7 +110,10 @@
             </div>
             <div style="margin: 10px">
                 <input type="submit" class="btn" style="color: white;background: #5bc0de"/>
-                <input type="button" class="btn" style="color: white;background: #5bc0de;margin-left: 20px" value="返回"/>
+                <a href="/resume" style="margin-left: 20px">
+                    <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
+                </a>
+
             </div>
 
         </form>

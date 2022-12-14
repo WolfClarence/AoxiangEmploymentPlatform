@@ -66,6 +66,12 @@ public class UserPageController {
         model.addAttribute("resume",resume);
         return "userPage/userResume";
     }
+    @RequestMapping("/resume/edit")
+    public String resumeEdit(HttpServletRequest request,HttpServletResponse response,Model model){
+        Resume resume = userWorkService.getResumeFromDao(getOwner_emailFromSession(request));
+        model.addAttribute("resume",resume);
+        return "userPage/userResumeEdit";
+    }
     //错误页面
     @RequestMapping("/error")
     public String error(){
