@@ -46,7 +46,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        <form method="get">
+        <form method="get" action="<c:url value="/admin/query"/>">
             <div class="row" style="margin-top: 10px">
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">关键字:</div>
+                    <div class="col-md-5" style="font-size: 20px;padding-top: 5px">职位关键字:</div>
                     <div class="col-md-1" >
                         <input name="keyword" class="form-control" style="width: 200px">
                     </div>
