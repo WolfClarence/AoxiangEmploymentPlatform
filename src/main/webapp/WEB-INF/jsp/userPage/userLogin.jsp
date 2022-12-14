@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -47,11 +48,11 @@
                 </div>
                 <p class="p-bottom">
                     没有翱翔招聘平台账号?
-                    <a style="color: #5cb85c" href="/register">
+                    <a style="color: #5cb85c" href="<c:url value="/register"/>">
                         点击注册
                     </a>
                     <br>
-                    <a style="color: #5cb85c" href="/admin">
+                    <a style="color: #5cb85c" href="<c:url value="/admin/login"/>">
                         管理员登录
                     </a>
                 </p>

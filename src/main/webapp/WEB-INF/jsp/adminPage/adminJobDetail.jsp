@@ -108,10 +108,10 @@
                 </div>
             </div>
             <div style="margin: 10px">
-                <a href="/admin/jobdetail/${job.id}/employee" style="margin-left: 20px">
+                <a href="/admin/jobdetail/employee/${job.id}" style="margin-left: 20px">
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="查看应聘者"/>
                 </a>
-                <a href="/admin/jobinfo" style="margin-left: 20px">
+                <a href="<c:url value="/admin/jobinfo"/>" style="margin-left: 20px">
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                 </a>
             </div>

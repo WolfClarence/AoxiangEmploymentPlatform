@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nwpn.mapper.JobMapper">
+<mapper namespace="com.nwpu.mapper.JobMapper">
 
     <select id="getJobs" resultType="job">
         select * from job
@@ -13,6 +13,9 @@
     </select>
     <select id="getJobByKind" resultType="job">
         select * from job where kind = #{kind}
+    </select>
+    <select id="getJobById" parameterType="int" resultType="job">
+        select * from job where id = #{id}
     </select>
 
     <insert id="insert" parameterType="job">

@@ -32,13 +32,13 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/account">
+                <a href="<c:url value="/admin/account"/>">
                     <i class="glyphicon glyphicon-tasks" aria-hidden="true"></i>
                     账号管理
                 </a>
             </li>
             <li>
-                <a href="/login">
+                <a href="<c:url value="/login"/>">
                     <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
                     退出
                 </a>
@@ -90,7 +90,8 @@
                 </div>
                 <div>
                     <%--修改状态--%>
-                    <form method="post" action="">
+                    <p style="color: red">${msg}</p>
+                    <form method="post" action="<c:url value="/admin/update/application/${application.id}/${jobId}/${email}"/>">
                         当前状态：${application.status}
                         <br>
                         修改状态：
@@ -98,14 +99,14 @@
                             <option value="正在处理">正在处理</option>
                             <option value="约请面试">约请面试</option>
                             <option value="应聘成功">应聘成功</option>
-                            <option value="抱歉">抱歉</option>
+                            <option value="抱歉,已被拒绝">抱歉,已被拒绝</option>
                         </select>
-                        <input type="submit" class="btn">
+                        <input type="submit" value="点击修改" class="btn">
                     </form>
 
                 </div>
                 <div style="margin: 10px">
-                    <a href="/admin/jobdetail/${job.id}" style="margin-left: 20px">
+                    <a href="/admin/jobdetail/${jobId}" style="margin-left: 20px">
                         <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                     </a>
                 </div>

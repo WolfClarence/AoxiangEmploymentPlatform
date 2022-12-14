@@ -48,19 +48,18 @@
     <div class="content content-is-open">
         <div class="job-detail-body">
             <ul class="list-unstyled">
-                <%--employeeList是List<Resume>--%>
-                <c:forEach items="${employeeList}" var="employee">
+                <c:forEach items="${userList}" var="employee">
                     <li class="show-list-item">
-                        <a href="/admin/jobdetail/${job.id}/employeedetail/${employee.id}">
+                        <a href="/admin/jobdetail/employeedetail/${jobId}/${employee.email}">
                             <label>
-                                    ${employee.name} ${employee.age}岁 ${(employee.sex==0)?"女":"男"}
+                                    姓名:${employee.name} 邮箱:${employee.email}
                             </label>
                         </a>
                     </li>
                 </c:forEach>
             </ul>
             <div style="margin: 10px">
-                <a href="/admin/jobdetail/${job.id}" style="margin-left: 20px">
+                <a href="/admin/jobdetail/${jobId}" style="margin-left: 20px">
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                 </a>
             </div>
