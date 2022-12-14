@@ -38,4 +38,7 @@ public class UserWorkService {
     public Resume getResumeFromDao(String owner_email){
         return resumeMapper.getResumeByOwner_email(owner_email);
     }
+    public int updateResumeInDao(Resume resume){
+       return  resumeMapper.update(resume);
+    }
 }

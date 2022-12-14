@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -25,13 +26,13 @@
         <div class="title">用户菜单</div>
         <ul class="nav">
             <li>
-                <a href="/job">
+                <a href="<c:url value="/job"/>">
                     <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
                     招聘信息
                 </a>
             </li>
             <li>
-                <a href="/application">
+                <a href="<c:url value="/application"/>">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     我的申请
                 </a>
@@ -43,7 +44,7 @@
                 </a>
             </li>
             <li>
-                <a href="/login">
+                <a href="<c:url value="/login"/>">
                     <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
                     退出
                 </a>
@@ -51,66 +52,69 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        <form action="" method="post">
+        <p style="color: red">${msg eq null ?"":msg}</p>
+        <form action="<c:url value="/resume/fix.do"/>" method="post">
+            <input name="owner_email" type="hidden" value="${userSession.email}">
             <div class="resume-body">
                 <div class="resume-item">
                     姓名：
-                    <input class="form-control" value="${resume.name}">
+                    <input class="form-control" name="name" value="${resume.name}">
                 </div>
                 <div class="resume-item">
                     年龄：
-                    <input type="number" class="form-control" value="${resume.age}">
+                    <input name="age" type="number" class="form-control" value="${resume.age}">
                 </div>
                 <div class="resume-item">
                     性别：
-                    <select name="sex" class="form-control">
-                        <option value="">${resume.sex}</option>
+                    <select  name="sex" class="form-control">
+                        <option value="${resume.sex}">${resume.sex eq 0?'女':'男'}</option>
+                        <option value="${resume.sex eq 0? 1:0}">${resume.sex eq 0?'男':'女'}</option>
                     </select>
                 </div>
                 <div class="resume-item">
                     民族：
-                    <input type="text" class="form-control" value="${resume.nation}">
+                    <input name="nation" type="text" class="form-control" value="${resume.nation}">
                 </div>
                 <div class="resume-item">
                     专业：
-                    <input type="text" class="form-control" value="${resume.profession}">
+                    <input name="profession" type="text" class="form-control" value="${resume.profession}">
                 </div>
                 <div class="resume-item">
                     求职意向：
-                    <input type="text" class="form-control" value="${resume.intention}">
+                    <input name="intention" type="text" class="form-control" value="${resume.intention}">
                 </div>
                 <div class="resume-item">
                     毕业院校：
-                    <input type="text" class="form-control" value="${resume.school}">
+                    <input name="school" type="text" class="form-control" value="${resume.school}">
                 </div>
                 <div class="resume-item">
                     手机号：
-                    <input type="text" class="form-control" value="${resume.phone}">
+                    <input name="phone" type="text" class="form-control" value="${resume.phone}">
                 </div>
                 <div class="resume-item">
                     邮箱：
-                    <input type="text" class="form-control" value="${resume.email}">
+                    <input name="email" type="text" class="form-control" value="${resume.email}">
                 </div>
                 <div class="resume-item">
                     技能：
-                    <input type="text" class="form-control" value="${resume.skill}">
+                    <input name="skill" type="text" class="form-control" value="${resume.skill}">
                 </div>
                 <div class="resume-item">
                     奖项：
-                    <input type="text" class="form-control" value="${resume.award}">
+                    <input name="award" type="text" class="form-control" value="${resume.award}">
                 </div>
                 <div class="resume-item">
                     社会实践：
-                    <input type="text" class="form-control" value="${resume.practice}">
+                    <input name="practice" type="text" class="form-control" value="${resume.practice}">
                 </div>
                 <div class="resume-item">
                     自我描述：
-                    <input type="text" class="form-control" value="${resume.description}">
+                    <input name="description" type="text" class="form-control" value="${resume.description}">
                 </div>
             </div>
             <div style="margin: 10px">
-                <input type="submit" class="btn" style="color: white;background: #5bc0de"/>
-                <a href="/resume" style="margin-left: 20px">
+                <input value="提交修改" type="submit" class="btn" style="color: white;background: #5bc0de"/>
+                <a href="<c:url value="/resume"/>" style="margin-left: 20px">
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                 </a>
             </div>

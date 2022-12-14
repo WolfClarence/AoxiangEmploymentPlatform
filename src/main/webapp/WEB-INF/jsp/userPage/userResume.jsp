@@ -59,7 +59,7 @@
                 年龄：${resume.age}
             </p>
             <p class="resume-item">
-                性别：${resume.sex}
+                性别：${resume.sex eq 0 ? '女': '男'}
             </p>
             <p class="resume-item">
                 民族：${resume.nation}

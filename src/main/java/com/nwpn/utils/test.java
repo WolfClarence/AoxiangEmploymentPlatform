@@ -21,6 +21,7 @@ public class test {
         ResumeMapper resumeMapper = context.getBean(ResumeMapper.class);
         ApplicationMapper applicationMapper = context.getBean(ApplicationMapperImpl.class);
         KindMapper kindMapper = context.getBean(KindMapper.class);
-        System.out.println(kindMapper.insert("IT"));
+//        System.out.println(kindMapper.insert("IT"));
+        System.out.println(jobMapper.getJobs());
     }
 }

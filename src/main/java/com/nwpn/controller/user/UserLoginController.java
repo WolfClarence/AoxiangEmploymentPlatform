@@ -48,4 +48,9 @@ public class UserLoginController {
         request.getRequestDispatcher("/job").forward(request,response);
         return null;
     }
+
+    @RequestMapping("/register.do")
+    public void register_do(HttpServletRequest request,HttpServletResponse response){
+
+    }
 }

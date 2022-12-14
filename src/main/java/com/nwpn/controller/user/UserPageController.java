@@ -66,6 +66,7 @@ public class UserPageController {
         model.addAttribute("resume",resume);
         return "userPage/userResume";
     }
+    //修改简历
     @RequestMapping("/resume/edit")
     public String resumeEdit(HttpServletRequest request,HttpServletResponse response,Model model){
         Resume resume = userWorkService.getResumeFromDao(getOwner_emailFromSession(request));

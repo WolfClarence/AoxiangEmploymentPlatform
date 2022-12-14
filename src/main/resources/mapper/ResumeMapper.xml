@@ -13,7 +13,7 @@
         delete from resume where owner_email = #{email}
     </delete>
     <update id="update" parameterType="resume">
-        update resume where owner_email = #{owner_email} set owner_email=#{owner_email},name=#{name},sex=#{sex},nation=#{nation},age=#{age},profession=#{profession},intention=#{intention},school=#{school},phone=#{phone},email=#{email},skill=#{skill},award=#{award},practice=#{practice},description=#{description}
+        update resume set name=#{name},sex=#{sex},nation=#{nation},age=#{age},profession=#{profession},intention=#{intention},school=#{school},phone=#{phone},email=#{email},skill=#{skill},award=#{award},practice=#{practice},description=#{description} where owner_email = #{owner_email}
     </update>
 
 

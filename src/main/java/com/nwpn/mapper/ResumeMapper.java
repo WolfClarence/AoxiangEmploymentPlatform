@@ -15,5 +15,5 @@ public interface ResumeMapper {
     Resume getResumeByOwner_email(String email);
     int insert(Admin admin);
     int delete(String email);//简历的主键为用户的注册邮箱
-    int update(String name,String password);
+    int update(Resume resume);
 }

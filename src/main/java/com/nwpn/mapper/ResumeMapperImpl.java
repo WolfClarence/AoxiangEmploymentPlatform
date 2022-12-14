@@ -34,7 +34,7 @@ public class ResumeMapperImpl implements ResumeMapper{
     }
 
     @Override
-    public int update(String name, String password) {
-        return sqlSessionTemplate.getMapper(ResumeMapper.class).update(name,password);
+    public int update(Resume resume) {
+        return sqlSessionTemplate.getMapper(ResumeMapper.class).update(resume);
     }
 }
