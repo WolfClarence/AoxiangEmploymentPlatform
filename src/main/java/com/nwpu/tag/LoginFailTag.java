@@ -12,7 +12,9 @@ public class LoginFailTag extends TagSupport {
         JspWriter out = pageContext.getOut();
         String fail = (String) pageContext.getSession().getAttribute("loginFail");
         try {
-            out.println(fail);
+            if(fail!=null){
+                out.println(fail);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
