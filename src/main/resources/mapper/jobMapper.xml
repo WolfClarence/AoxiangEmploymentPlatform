@@ -19,13 +19,13 @@
     </select>
 
     <insert id="insert" parameterType="job">
-        insert into job value (#{id},#{name},#{min_salary},#{max_salary},#{description},#{company},#{area},#{kind},#{limit_condition})
+        insert into job value (null,#{name},#{min_salary},#{max_salary},#{description},#{company},#{area},#{kind},#{limit_condition})
     </insert>
     <delete id="delete" parameterType="int">
         delete from job where id = #{id}
     </delete>
     <update id="update" parameterType="job">
-        update job where id = #{id} set id=#{id},name=#{name},min_salary=#{min_salary},max_salary=#{max_salary},description=#{description},#{company},area=#{area},#{kind},limit_condition=#{limit_condition}
+        update job set name=#{name},min_salary=#{min_salary},max_salary=#{max_salary},description=#{description},#{company},area=#{area},#{kind},limit_condition=#{limit_condition}  where id = #{id}
     </update>
 
 </mapper>

@@ -150,6 +150,12 @@ public class AdminWorkController {
         request.getRequestDispatcher("/admin/account").forward(request,response);
     }
 
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     管理员账号新增实现
+     */
     @RequestMapping("/account/add")
     public void account_add_admin(String name,String password,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         String msg = "";
@@ -168,6 +174,27 @@ public class AdminWorkController {
         }
         request.setAttribute("msg",msg);
         request.getRequestDispatcher("/admin/account").forward(request,response);
+    }
+
+    @RequestMapping("job/add")
+    public void job_add_admin(String name,String kind,String company,String area,String min_salary,
+                              String max_salary,String description,String limit_condition,
+                              HttpServletResponse response,HttpServletRequest request) throws ServletException, IOException {
+        String msg = "";
+        if(StringUtils.isNullOrEmpty(name)){
+            msg = "小主，职位名称不能为空哟,添加失败咯";
+        }else{
+            Job job = new Job(0,name,kind,company,area,Integer.parseInt(min_salary),Integer.parseInt(max_salary)    ,description,limit_condition);
+            if(adminWorkService.addJobToDao(job)>0){
+                msg = "恭喜小主，添加成功！";
+            }else{
+                msg = "抱歉小主，由于系统或网络原因，添加失败";
+            }
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/jobinfo").forward(request,response);
+
+
     }
 
 }

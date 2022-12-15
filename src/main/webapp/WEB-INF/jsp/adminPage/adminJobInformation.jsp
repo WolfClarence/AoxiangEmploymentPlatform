@@ -88,6 +88,7 @@
                 <button class="btn" data-toggle="modal" data-target="#addModal"
                         style="color: white;background: #5bc0de">添加职位
                 </button>
+                <p style="color: red">${msg}</p>
             </div>
         </div>
         <ul class="list-unstyled">
@@ -112,7 +113,7 @@
                 <h4 class="modal-title">添加职位</h4>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="/admin/job/add">
                     名称：
                     <input type="text" name="name" class="form-control">
                     类别：
@@ -137,11 +138,11 @@
                     <textarea name="description" id="description" class="form-control"></textarea>
                     要求：
                     <textarea name="limit_condition" id="limit_condition" class="form-control"></textarea>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <input type="submit" class="btn btn-primary" value="提交">
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">提交修改</button>
             </div>
         </div>
     </div>

@@ -17,13 +17,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Job {
     private int id;
-    private String name;
+    private String name; private String kind;
+
+    private String company;
+    private String area;
     private int min_salary;
     private int max_salary;
     private String description;
-    private String company;
 //    private User uploader;
-    private String area;
-    private String kind;
+
+
     private String limit_condition;
 }
