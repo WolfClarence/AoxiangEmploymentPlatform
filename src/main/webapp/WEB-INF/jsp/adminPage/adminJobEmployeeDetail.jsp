@@ -103,7 +103,7 @@
                             <option value="应聘成功">应聘成功</option>
                             <option value="抱歉,已被拒绝">抱歉,已被拒绝</option>
                         </select>
-                        <input type="submit" value="点击修改" class="btn" style="color: white;background: #5bc0de;">
+                        <input type="submit" value="点击修改" class="btn btn-sm" style="color: white;background: #5bc0de;margin-left: 30px;margin-top: -8px;">
                     </form>
 
                 </div>
