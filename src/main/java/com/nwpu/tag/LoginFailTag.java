@@ -10,7 +10,7 @@ import java.io.IOException;
 public class LoginFailTag extends TagSupport {
     public int doStartTag() {
         JspWriter out = pageContext.getOut();
-        String fail = (String) pageContext.getSession().getAttribute("loginFail");
+        String fail = (String) pageContext.getRequest().getAttribute("loginFail");
         try {
             if(fail!=null){
                 out.println(fail);

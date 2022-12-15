@@ -47,7 +47,9 @@
                     <a style="color: #5cb85c" href="<c:url value="/login"/>">
                         用户登录
                     </a>
+                <div style="color:red;">
                     <z:loginFailTag/>
+                </div>
                 </p>
                 <input type="submit" value="Login">
             </form>

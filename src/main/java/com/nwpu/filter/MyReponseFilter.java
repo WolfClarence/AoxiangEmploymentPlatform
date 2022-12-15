@@ -7,11 +7,11 @@ import java.io.IOException;
  * @author GengXuelong
  * @version 1.0
  * @Mail 3349495429@qq.com
- * @Date 2022/11/28
- * @ClassName MyEncodingFilter
+ * @Date 2022/12/15
+ * @ClassName MyReponseFilter
  * @Description:
  */
-public class MyEncodingFilter implements Filter {
+public class MyReponseFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -19,11 +19,9 @@ public class MyEncodingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-//        System.out.println("进入encoding过滤器");
-        servletRequest.setCharacterEncoding("utf-8");
+        System.out.println("====>响应过滤器工作");
         servletResponse.setCharacterEncoding("utf-8");
         filterChain.doFilter(servletRequest,servletResponse);
-//        System.out.println("出encoding过滤器");
     }
 
     @Override

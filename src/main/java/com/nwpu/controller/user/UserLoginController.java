@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 /**
  * @author GengXuelong
@@ -38,7 +40,7 @@ public class UserLoginController {
         User login = userLoginService.login(email, password);//实现登录的业务
         if(login==null){//登录失败后
 //            model.addAttribute("msg","用户名或密码错误");
-            request.getSession().setAttribute("loginFail","用户名或密码错误");
+            request.setAttribute("loginFail","用户名或密码错误");
             request.getRequestDispatcher("/login").forward(request,response);
 //            return "userPage/userLogin";
         }
@@ -47,6 +49,10 @@ public class UserLoginController {
         1. 将承载用户信息的User对象放入session中，为拦截器拦截未登录的用户提供条件
         2. 跳转到岗位展示页面
          */
+        assert login != null;
+        String username = login.getName();
+        Cookie userNameCookie = new Cookie("username", URLEncoder.encode(username,"utf-8"));
+        response.addCookie(userNameCookie);
         request.getSession().setAttribute("userSession",login);
         request.getRequestDispatcher("/job").forward(request,response);
     }
