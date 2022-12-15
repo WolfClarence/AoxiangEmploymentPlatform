@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.AdminMapper;
 import com.nwpu.pojo.Admin;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
  * @Description:
  */
 @Repository
-public class AdminMapperImpl implements AdminMapper{
+public class AdminMapperImpl implements AdminMapper {
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;

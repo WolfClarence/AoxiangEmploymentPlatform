@@ -10,6 +10,7 @@ import java.io.IOException;
  * @Date 2022/12/15
  * @ClassName MyRequestFilter
  * @Description:
+ *      项目的相应拦截器，用于设定相应的编码方式
  */
 public class MyRequestFilter implements Filter {
     @Override

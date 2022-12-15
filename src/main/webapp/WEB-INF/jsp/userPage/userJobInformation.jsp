@@ -52,7 +52,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        <form method="get">
+        <form action="/query" method="get">
             <div class="row" style="margin-top: 10px">
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>

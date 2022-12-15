@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.UserMapper;
 import com.nwpu.pojo.User;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

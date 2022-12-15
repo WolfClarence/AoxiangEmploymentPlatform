@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
  * @Date 2022/12/4
  * @ClassName Resume
  * @Description:
- *      一个用户对应一个简历
+ *      简历的实体类，一个用户对应一个简历
  */
 @Data
 @AllArgsConstructor

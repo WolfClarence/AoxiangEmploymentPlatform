@@ -9,6 +9,14 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * @author SongYuxuan
+ * @Email 3349495429@qq.com
+ * @Date 2022-12-13
+ * @version 1.0
+ * @Description:
+ *      自定义Tag标签，用于展示欢迎信息
+ */
 public class WelcomeTag extends TagSupport {
     private int type;//添加的属性
     public void setType(int type) {

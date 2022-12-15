@@ -3,11 +3,10 @@ package com.nwpu.controller.user;
 import com.mysql.cj.util.StringUtils;
 import com.nwpu.pojo.User;
 import com.nwpu.service.user.UserLoginService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -26,28 +25,45 @@ import java.net.URLEncoder;
  */
 @Controller
 public class UserLoginController {
-    @Autowired
+
+   /**
+    * <p> 变量描述如下:
+    * @Description:
+    *     service层引入
+    */
+    @Resource
     UserLoginService userLoginService;
+
     /**
      * @author GengXuelong
      * <p> 函数功能描述如下:
      * @Description:
-     *     实现登录功能
+     *     实现用户登录功能
      */
     @RequestMapping("/login.do")
-    public void login_do(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model) throws ServletException, IOException {
-        System.out.println(email+"::::::"+password);//测试
-        User login = userLoginService.login(email, password);//实现登录的业务
-        if(login==null){//登录失败后
-//            model.addAttribute("msg","用户名或密码错误");
-            request.setAttribute("loginFail","用户名或密码错误");
-            request.getRequestDispatcher("/login").forward(request,response);
-//            return "userPage/userLogin";
-        }
+    public void login_do(HttpServletRequest request,
+                         HttpServletResponse response,
+                         String email, String password) throws ServletException, IOException {
+
         /*
-        登录成功后的操作，
-        1. 将承载用户信息的User对象放入session中，为拦截器拦截未登录的用户提供条件
-        2. 跳转到岗位展示页面
+        实现登录的业务
+         */
+        User login = userLoginService.login(email, password);
+
+        /*
+        实现登录的业务
+         */
+        if(login==null){
+            request.setAttribute("loginFail","用户名或密码错误");// 方便自定义Tag获取该值
+            request.getRequestDispatcher("/login").forward(request,response);
+        }
+
+        /*
+        登录成功
+        之后的操作为，
+        1.将用户名放入cookie中传至前端页面，供其在适当时机使用。
+        2. 将承载用户信息的User对象放入session中，为拦截器拦截未登录的用户提供条件
+        3. 跳转到岗位展示页面
          */
         assert login != null;
         String username = login.getName();
@@ -64,10 +80,13 @@ public class UserLoginController {
      *     实现注册功能
      */
     @RequestMapping("/register.do")
-    public void register_do(HttpServletRequest request,HttpServletResponse response,
-                            String email,String name,String password) throws ServletException, IOException {
-        System.out.println(email+name+password);//测试数据传输
-        String msg = "";
+    public void register_do(HttpServletRequest request,
+                            HttpServletResponse response,
+                            String email,
+                            String name,
+                            String password) throws ServletException, IOException {
+
+        String msg ;
         if(StringUtils.isNullOrEmpty(email)||StringUtils.isNullOrEmpty(name)||StringUtils.isNullOrEmpty(password)){
             msg= "填入数据均不能为空哟小主";
         }else{
@@ -83,7 +102,7 @@ public class UserLoginController {
                     msg = "小主，因为系统或者网络原因注册不小心失败了，请小主重新注册..";
                     //注册成功
                 }else{
-                    msg = "恭喜小主，注册成功";
+                    msg = "恭喜小主，注册成功,赶快去登录吧！";
                 }
             }
         }

@@ -3,9 +3,9 @@ package com.nwpu.service.admin;
 import com.mysql.cj.util.StringUtils;
 import com.nwpu.mapper.*;
 import com.nwpu.pojo.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,51 +17,36 @@ import java.util.List;
  * @Date 2022/12/13
  * @ClassName AdminWorkService
  * @Description:
+ *      管理系统的service层的实现
  */
 @Service
 public class AdminWorkService {
-    @Autowired
+
+    /**
+     * <p> 变量描述如下:
+     * @Description:
+     *     dao的引入
+     */
+    @Resource
     JobMapper jobMapper;
-    @Autowired
+    @Resource
     ApplicationMapper applicationMapper;
-    @Autowired
+    @Resource
     ResumeMapper resumeMapper;
-    @Autowired
-    UserMapper userMapper;
-    @Autowired
+    @Resource
     KindMapper kindMapper;
-    @Autowired
+    @Resource
     AreaMapper areaMapper;
-    @Autowired
+    @Resource
     AdminMapper adminMapper;
 
-    public List<Job> getAllJobsFromDao(){
-        return jobMapper.getJobs();
-    }
-//    public List<User> getAllUsersFromDao(){
-//        return userMapper.getUsers();
-//    }
-    public List<String> getAllKindsFromDao(){
-        LinkedList<String> kinds = new LinkedList<>(kindMapper.getKinds());
-        kinds.addFirst(null);
-        return kinds;
-    }
-    public List<String> getAllAreasFromDao(){
-        LinkedList<String> areas = new LinkedList<>(areaMapper.getAreas());
-        areas.addFirst(null);
-        return areas;
-    }
 
-    public List<Admin> getAllAdminsFromDao(){
-        LinkedList<Admin> admins = new LinkedList<>(adminMapper.getAdmins());
-        return admins;
-    }
 
     /**
      * @author GengXuelong
      * <p> 函数功能描述如下:
      * @Description:
-     *     实现admin - job页面的查询功能
+     *     实现admin的job页面的查询功能
      */
     public List<Job> query(String kind, String area, String keyword) {
         List<Job> res = jobMapper.getJobByLikedName(keyword);
@@ -87,6 +72,28 @@ public class AdminWorkService {
         }
         res.removeAll(removed);
         return res;
+    }
+
+
+
+    public List<Job> getAllJobsFromDao(){
+        return jobMapper.getJobs();
+    }
+
+    public List<String> getAllKindsFromDao(){
+        LinkedList<String> kinds = new LinkedList<>(kindMapper.getKinds());
+        kinds.addFirst(null);
+        return kinds;
+    }
+
+    public List<String> getAllAreasFromDao(){
+        LinkedList<String> areas = new LinkedList<>(areaMapper.getAreas());
+        areas.addFirst(null);
+        return areas;
+    }
+
+    public List<Admin> getAllAdminsFromDao(){
+        return new LinkedList<>(adminMapper.getAdmins());
     }
 
     public Job getJobByIdFromDao(String jobId) {
@@ -148,9 +155,5 @@ public class AdminWorkService {
 
     public void deleteJobByIdFromDao(int jobId) {
         jobMapper.delete(jobId);
-    }
-
-    public List<Application> getApplicationByJobId(int jobId) {
-        return applicationMapper.getApplicationByJobId(jobId);
     }
 }

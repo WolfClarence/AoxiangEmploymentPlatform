@@ -11,13 +11,14 @@ import lombok.NoArgsConstructor;
  * @Date 2022/12/4
  * @ClassName Application
  * @Description:
+ *      职位申请的实体类
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Application {
     private int id;
-    private User user;//owner_id
-    private Job job;//jobId
+    private User user;
+    private Job job;
     private String status;//正在处理，应聘成功，已驳回，等
 }

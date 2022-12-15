@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.JobMapper;
 import com.nwpu.pojo.Job;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
  * @Description:
  */
 @Repository
-public class JobMapperImpl implements JobMapper{
+public class JobMapperImpl implements JobMapper {
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;

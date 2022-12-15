@@ -6,9 +6,10 @@ import com.nwpu.mapper.ResumeMapper;
 import com.nwpu.pojo.Application;
 import com.nwpu.pojo.Job;
 import com.nwpu.pojo.Resume;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.nwpu.service.admin.AdminWorkService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,22 +23,39 @@ import java.util.List;
  */
 @Service
 public class UserWorkService {
-    @Autowired
+
+    /**
+     * <p> 变量描述如下:
+     * @Description:
+     *     dao的自动注入，以便该service层的使用
+     */
+    @Resource
     JobMapper jobMapper;
-    @Autowired
+    @Resource
     ApplicationMapper applicationMapper;
-    @Autowired
+    @Resource
     ResumeMapper resumeMapper;
+
+    /**
+     * <p> 变量描述如下:
+     * @Description:
+     *     service同层之间的调用，以减少代码的重复编写，提高代码的复用率
+     */
+    @Resource
+    AdminWorkService adminWorkService;
 
     public List<Job> getAllJobsFromDao(){
         return jobMapper.getJobs();
     }
+
     public List<Application> getAllApplicationsFromDao(String owner_email){
         return applicationMapper.getApplicationByOwner_email(owner_email);
     }
+
     public Resume getResumeFromDao(String owner_email){
         return resumeMapper.getResumeByOwner_email(owner_email);
     }
+
     public int updateResumeInDao(Resume resume){
        return  resumeMapper.update(resume);
     }
@@ -48,5 +66,17 @@ public class UserWorkService {
 
     public int addApplicationToDao(Application application) {
         return applicationMapper.insert(application);
+    }
+
+    public List<Job> query(String kind, String area, String keyword) {
+        return adminWorkService.query(kind,area,keyword);
+    }
+
+    public List<String> getAllKindsFromDao() {
+        return adminWorkService.getAllKindsFromDao();
+    }
+
+    public List<String> getAllAreasFromDao() {
+        return adminWorkService.getAllAreasFromDao();
     }
 }

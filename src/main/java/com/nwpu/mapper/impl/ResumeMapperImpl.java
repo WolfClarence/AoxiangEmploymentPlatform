@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.ResumeMapper;
 import com.nwpu.pojo.Admin;
 import com.nwpu.pojo.Resume;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @Description:
  */
 @Repository
-public class ResumeMapperImpl implements ResumeMapper{
+public class ResumeMapperImpl implements ResumeMapper {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
     @Override

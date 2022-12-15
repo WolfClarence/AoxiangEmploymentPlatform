@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.KindMapper;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,7 @@ import java.util.List;
  * @Description:
  */
 @Repository
-public class KindMapperImpl implements KindMapper{
+public class KindMapperImpl implements KindMapper {
     @Autowired
     SqlSessionTemplate sqlSessionTemplate;
     @Override

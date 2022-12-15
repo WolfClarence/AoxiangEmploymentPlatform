@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
  * @Date 2022/11/29
  * @ClassName Job
  * @Description:
+ *      职位的实体类
  */
 @Data
 @AllArgsConstructor
@@ -18,14 +19,10 @@ import lombok.NoArgsConstructor;
 public class Job {
     private int id;
     private String name; private String kind;
-
     private String company;
     private String area;
     private int min_salary;
     private int max_salary;
     private String description;
-//    private User uploader;
-
-
     private String limit_condition;
 }

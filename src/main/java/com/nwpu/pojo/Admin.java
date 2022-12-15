@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
  * @Date 2022/11/29
  * @ClassName Admin
  * @Description:
+ *      管理员实体类
  */
 @Data
 @AllArgsConstructor

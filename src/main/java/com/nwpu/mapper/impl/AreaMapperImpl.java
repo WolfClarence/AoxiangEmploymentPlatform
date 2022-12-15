@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.AreaMapper;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,7 @@ import java.util.List;
  * @Description:
  */
 @Repository
-public class AreaMapperImpl implements AreaMapper{
+public class AreaMapperImpl implements AreaMapper {
     @Autowired
     SqlSessionTemplate sqlSessionTemplate;
     @Override

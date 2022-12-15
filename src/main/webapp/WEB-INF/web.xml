@@ -41,7 +41,7 @@
 
     <filter>
         <filter-name>encoding_resp</filter-name>
-        <filter-class>com.nwpu.filter.MyReponseFilter</filter-class>
+        <filter-class>com.nwpu.filter.MyResponseFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>encoding_resp</filter-name>

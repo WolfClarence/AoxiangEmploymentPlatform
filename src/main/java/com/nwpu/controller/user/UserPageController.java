@@ -8,8 +8,10 @@ import com.nwpu.service.user.UserWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -24,33 +26,65 @@ import java.util.List;
  */
 @Controller
 public class UserPageController {
-    @Autowired
+    /**
+     * <p> 变量描述如下:
+     * @Description:
+     *     service引入
+     */
+    @Resource
     UserWorkService userWorkService;
 
-    /*
-    页面跳转
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入用户登录页
      */
     @RequestMapping("/login")
     public String login(){
         return "userPage/userLogin";
     }
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入注册页面
+     */
     @RequestMapping("/register")
     public String registry(){
         return "userPage/userRegister";
     }
-    //招聘信息
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入招聘信息展示页面，也就是用户主页面
+     */
     @RequestMapping("/job")
     public String job(Model model){
         /*
         每次进入此页面均应该获取后端数据库的最新数据
          */
         List<Job> allJobsFormDao = userWorkService.getAllJobsFromDao();
+        List<String> allKindsFromDao = userWorkService.getAllKindsFromDao();
+        List<String> allAreasFromDao = userWorkService.getAllAreasFromDao();
+        model.addAttribute("kindList",allKindsFromDao);
+        model.addAttribute("areaList",allAreasFromDao);
         model.addAttribute("jobList",allJobsFormDao);
         return "userPage/userJobInformation";
     }
-    //我的申请
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入”我的申请“页面
+     */
     @RequestMapping("/application")
-    public String application(HttpServletRequest request, HttpServletResponse response,Model model){
+    public String application(HttpServletRequest request,
+                              Model model){
          /*
         每次进入此页面均应该获取后端数据库的最新数据
          */
@@ -59,26 +93,57 @@ public class UserPageController {
         model.addAttribute("applicationList",allApplicationsFromDao);
         return "userPage/userApplication";
     }
-    //我的简历
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入”我的简历“页面
+     */
     @RequestMapping("/resume")
-    public String resume(HttpServletRequest request,HttpServletResponse response,Model model){
+    public String resume(HttpServletRequest request,
+                         Model model){
         Resume resume = userWorkService.getResumeFromDao(getOwner_emailFromSession(request));
         model.addAttribute("resume",resume);
         return "userPage/userResume";
     }
-    //修改简历
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入修改简历的页面
+     */
     @RequestMapping("/resume/edit")
-    public String resumeEdit(HttpServletRequest request,HttpServletResponse response,Model model){
+    public String resumeEdit(HttpServletRequest request,
+                             Model model){
+         /*
+        每次进入此页面均应该获取后端数据库的最新数据
+         */
         Resume resume = userWorkService.getResumeFromDao(getOwner_emailFromSession(request));
         model.addAttribute("resume",resume);
         return "userPage/userResumeEdit";
     }
-    //错误页面
-    @RequestMapping("/error")
-    public String error(){
-        return "error";
+
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入职位详情展示页
+     */
+    @RequestMapping("/jobdetail/{id}")
+    public String user_to_jobDetail(@PathVariable("id")int id, Model model){
+        Job job = userWorkService.getJobByIdFromDao(id);
+        model.addAttribute("job",job);
+        return "userPage/userJobDetail";
     }
 
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     私用工具方法
+     */
     private String  getOwner_emailFromSession(HttpServletRequest request){
         Object userSession = request.getSession().getAttribute("userSession");
         User user = (User)userSession;

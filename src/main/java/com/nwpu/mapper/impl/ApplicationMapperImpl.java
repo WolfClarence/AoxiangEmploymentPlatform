@@ -1,5 +1,6 @@
-package com.nwpu.mapper;
+package com.nwpu.mapper.impl;
 
+import com.nwpu.mapper.ApplicationMapper;
 import com.nwpu.pojo.Application;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
  * @Description:
  */
 @Repository
-public class ApplicationMapperImpl implements ApplicationMapper{
+public class ApplicationMapperImpl implements ApplicationMapper {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
     @Override

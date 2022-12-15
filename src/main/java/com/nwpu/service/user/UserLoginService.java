@@ -2,8 +2,9 @@ package com.nwpu.service.user;
 
 import com.nwpu.mapper.UserMapper;
 import com.nwpu.pojo.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author GengXuelong
@@ -16,7 +17,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserLoginService {
-    @Autowired
+
+    /**
+     * <p> 变量描述如下:
+     * @Description:
+     *     dao层的引入
+     */
+    @Resource
     private UserMapper userMapper;
 
     /**
