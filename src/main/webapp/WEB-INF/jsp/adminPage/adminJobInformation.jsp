@@ -12,12 +12,11 @@
     <meta charset="UTF-8">
     <title>招聘信息</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
+    <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
     <meta charset="utf-8">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/modal.js"></script>
 </head>
 <body>
 <c:import url="../component/banner.jsp"/>
@@ -51,7 +50,9 @@
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>
                     <div class="col-md-1">
-                        <select name="kind" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                        <select name="kind"
+                                class="form-control"
+                                style="width: 100px;height: 35px;background: #5bc0de;color: white">
                             <c:forEach var="kindItem" items="${kindList}">
                                 <option value="${kindItem}">${kindItem}</option>
                             </c:forEach>
@@ -60,8 +61,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">地点:</div>
-                    <div class="col-md-1" >
-                        <select name="area" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                    <div class="col-md-1">
+                        <select name="area"
+                                class="form-control"
+                                style="width: 100px;height: 35px;background: #5bc0de;color: white">
                             <c:forEach var="areaItem" items="${areaList}">
                                 <option value="${areaItem}">${areaItem}</option>
                             </c:forEach>
@@ -70,15 +73,23 @@
                 </div>
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">职位关键字:</div>
-                    <div class="col-md-1" >
+                    <div class="col-md-1">
                         <input name="keyword" class="form-control" style="width: 200px">
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="btn" style="color: white;background: #5bc0de;margin-left: 20px" value="查询">
+                    <input type="submit" class="btn" style="color: white;background: #5bc0de;margin-left: 20px"
+                           value="查询">
                 </div>
             </div>
         </form>
+        <div class="row" style="margin-top: 10px;margin-left: 0">
+            <div class="col-md-3">
+                <button class="btn" data-toggle="modal" data-target="#addModal"
+                        style="color: white;background: #5bc0de">添加职位
+                </button>
+            </div>
+        </div>
         <ul class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
                 <li class="show-list-item">
@@ -90,22 +101,66 @@
                 </li>
             </c:forEach>
         </ul>
+
+    </div>
+</div>
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加职位</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    名称：
+                    <input type="text" name="name" class="form-control">
+                    类别：
+                    <select class="form-control" name="kind">
+                        <c:forEach var="kindItem" items="${kindList}">
+                            <option value="${kindItem}">${kindItem}</option>
+                        </c:forEach>
+                    </select>
+                    公司：
+                    <input type="text" name="company" class="form-control">
+                    地区：
+                    <select class="form-control" name="area">
+                        <c:forEach var="areaItem" items="${areaList}">
+                            <option value="${areaItem}">${areaItem}</option>
+                        </c:forEach>
+                    </select>
+                    最小工资：
+                    <input type="number" name="min_salary" class="form-control">
+                    最大工资：
+                    <input type="number" name="max_salary" class="form-control">
+                    描述：
+                    <textarea name="description" id="description" class="form-control"></textarea>
+                    要求：
+                    <textarea name="limit_condition" id="limit_condition" class="form-control"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交修改</button>
+            </div>
+        </div>
     </div>
 </div>
 <c:import url="../component/footer.jsp"/>
 </body>
 <style>
-    body{
+    body {
         color: black;
     }
 
-    .show-list-item{
+    .show-list-item {
         font-size: 20px;
         color: #4cae4c;
         margin: 8px;
     }
-    .show-list-item a label{
-        background: linear-gradient(to right,royalblue,plum) center/cover;
+
+    .show-list-item a label {
+        background: linear-gradient(to right, royalblue, plum) center/cover;
         width: 100%;
         height: 50px;
         color: #5bc0de;

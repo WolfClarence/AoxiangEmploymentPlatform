@@ -49,7 +49,7 @@
         <div class="job-detail-body">
             <ul class="list-unstyled">
                 <c:forEach items="${userList}" var="employee">
-                    <li class="show-list-item" style="padding: 0">
+                    <li class="show-list-item">
                         <a href="/admin/jobdetail/employeedetail/${jobId}/${employee.email}"
                         style="margin: 0">
                             <label style="width: 100%;font-size: 30px">

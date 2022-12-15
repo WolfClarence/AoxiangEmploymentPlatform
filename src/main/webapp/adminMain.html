@@ -11,6 +11,48 @@
     <script src="static/js/modal.js"></script>
 </head>
 <body>
+<button class="btn" style="margin-left: 0"
+        data-toggle="modal" data-target="#updateModal"
+        onclick="update('${job.name}','${job.kind}','${job.company}','${job.area}',
+                '${job.min_salary}','${job.max_salary}','${job.description}','${job.limit_condition}')">
+    修改职位
+</button>
+<div class="modal fade" id="updateModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加职位</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    名称：
+                    <input type="text" name="name" class="form-control">
+                    类别：
+                    <select class="form-control" name="kind">
+                    </select>
+                    公司：
+                    <input type="text" name="company" class="form-control">
+                    地区：
+                    <select class="form-control" name="area">
+                    </select>
+                    最小工资：
+                    <input type="number" name="min_salary" class="form-control">
+                    最大工资：
+                    <input type="number" name="max_salary" class="form-control">
+                    描述：
+                    <textarea type="text" name="description" class="form-control"></textarea>
+                    限制条件：
+                    <input type="text" name="limit_condition" class="form-control">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交修改</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script>
 </script>

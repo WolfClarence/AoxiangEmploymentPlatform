@@ -88,20 +88,22 @@
                         自我描述：${resume.description}
                     </p>
                 </div>
+                <br>
+                <br>
                 <div>
                     <%--修改状态--%>
                     <p style="color: red">${msg}</p>
                     <form method="post" action="<c:url value="/admin/update/application/${application.id}/${jobId}/${email}"/>">
-                        当前状态：${application.status}
+                        <h2>当前状态：${application.status}</h2>
                         <br>
-                        修改状态：
-                        <select name="status" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                        <h2>修改状态：</h2>
+                        <select name="status" style="font-size: 20px;width: 120px;height: 30px;color: black">
                             <option value="正在处理">正在处理</option>
                             <option value="约请面试">约请面试</option>
                             <option value="应聘成功">应聘成功</option>
                             <option value="抱歉,已被拒绝">抱歉,已被拒绝</option>
                         </select>
-                        <input type="submit" value="点击修改" class="btn">
+                        <input type="submit" value="点击修改" class="btn" style="color: white;background: #5bc0de;">
                     </form>
 
                 </div>
@@ -116,12 +118,16 @@
 <c:import url="../component/footer.jsp"/>
 </body>
 <style>
+    body{
+        color: black;
+    }
     .resume-body{
         color: black;
         font:15px arial,sans-serif;
     }
     .resume-item{
         margin: 10px;
+        text-align: left;
     }
 </style>
 </html>
