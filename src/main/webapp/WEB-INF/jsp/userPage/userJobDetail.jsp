@@ -9,7 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>招聘详情</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
+    <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/modal.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
 </head>
 <body>
 <c:import url="../component/banner.jsp"/>

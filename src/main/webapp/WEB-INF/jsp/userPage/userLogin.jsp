@@ -56,7 +56,6 @@
         </div>
     </div>
 </div>
-
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>

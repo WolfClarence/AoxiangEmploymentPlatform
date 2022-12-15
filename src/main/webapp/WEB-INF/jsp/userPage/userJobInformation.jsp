@@ -98,6 +98,7 @@
         </ul>
     </div>
 </div>
+<c:import url="../component/footer.jsp"/>
 </body>
 <style>
     body{

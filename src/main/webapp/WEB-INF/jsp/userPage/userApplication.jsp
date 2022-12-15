@@ -20,7 +20,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+<c:import url="../component/banner.jsp"/>
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">用户菜单</div>
@@ -64,7 +64,7 @@
         </ul>
     </div>
 </div>
-
+<c:import url="../component/footer.jsp"/>
 </body>
 <style>
     .show-list-item{

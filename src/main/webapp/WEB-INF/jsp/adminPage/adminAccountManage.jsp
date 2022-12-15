@@ -22,6 +22,7 @@
 </head>
 <body>
 <c:import url="../component/banner.jsp"/>
+${adminSession.name}
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">管理员菜单</div>

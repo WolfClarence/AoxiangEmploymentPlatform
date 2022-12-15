@@ -122,6 +122,7 @@
 
     </div>
 </div>
+<c:import url="../component/footer.jsp"/>
 </body>
 <style>
     .resume-body {
