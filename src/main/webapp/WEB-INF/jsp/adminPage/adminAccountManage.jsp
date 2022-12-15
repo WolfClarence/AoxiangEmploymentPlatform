@@ -47,6 +47,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
+        <p style="color: red;">${msg}</p>
         <ul class="list-unstyled">
             <c:forEach var="admin" items="${adminList}">
                 <li class="show-list-item">
@@ -60,7 +61,7 @@
                         <button class="btn">删除</button>
                     </a>
                     <button class="btn" data-toggle="modal" data-target="#updateModel"
-                            onclick="update('${admin.password}')">修改密码
+                            onclick="update('${admin.password}','${admin.name}')">修改密码
                     </button>
                 </div>
             </c:forEach>
@@ -78,15 +79,17 @@
                 <h4 class="modal-title">修改密码</h4>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="<c:url value="/admin/account/update"/>">
+                    <input type="hidden" id = "name" name="name">
                     新密码：
-                    <input type="text" class="form-control" id="password">
+                    <input type="text" name="newPassword" class="form-control" id="password">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <input type="submit" class="btn btn-primary" value="提交修改"/>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">提交修改</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -98,17 +101,18 @@
                 <h4 class="modal-title">添加管理员</h4>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="<c:url value="/admin/account/add"/>">
                     用户名：
-                    <input type="text" class="form-control" id="username">
+                    <input name="name" type="text" class="form-control" id="username">
                     密码：
-                    <input type="text" class="form-control" id="pwd">
+                    <input name="password" type="text" class="form-control" id="pwd">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <input type="submit" class="btn btn-primary" style="margin-left: 30px" value="提交">
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" style="margin-left: 30px">提交</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -139,8 +143,9 @@
     }
 </style>
 <script>
-    function update(password) {
+    function update(password,name) {
         $("#password").val(password);
+        $("#name").val(name);
     }
 </script>
 </html>

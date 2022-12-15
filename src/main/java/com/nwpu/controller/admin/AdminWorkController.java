@@ -1,9 +1,7 @@
 package com.nwpu.controller.admin;
 
-import com.nwpu.pojo.Application;
-import com.nwpu.pojo.Job;
-import com.nwpu.pojo.Resume;
-import com.nwpu.pojo.User;
+import com.mysql.cj.util.StringUtils;
+import com.nwpu.pojo.*;
 import com.nwpu.service.admin.AdminWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -113,9 +111,63 @@ public class AdminWorkController {
         }
         request.setAttribute("msg",msg);
         request.getRequestDispatcher("/admin/jobdetail/employeedetail/"+jobId+"/"+email).forward(request,response);
-
     }
 
 
+    @RequestMapping("/account/update")
+    public void account_update_admin(String newPassword,String name,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(newPassword+name);
+        String msg = "";
+        if(StringUtils.isNullOrEmpty(newPassword)){
+            msg = "小主，新密码不能为空哟";
+        }else{
+            int res = adminWorkService.updateAccountToDao(name,newPassword);
+            if(res <0){
+                msg = "抱歉小主，由于系统或网络原因，修改失败";
+            }else{
+                msg = "恭喜小主，修改成功！";
+            }
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/account").forward(request,response);
+    }
+
+    @RequestMapping("/account/delete/{name}")
+    public void account_delete_admin(@PathVariable("name")String name,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        String msg = "";
+        String nameInSession = ((Admin)(request.getSession().getAttribute("adminSession"))).getName();
+        if(nameInSession.equals(name)){
+            msg = "抱歉小主，你想删掉的是自己的账号，不能这么做哟。。";
+        }else{
+            int res = adminWorkService.deleteAccountByNameFromDao(name);
+            if(res<0){
+                msg = "抱歉小主，由于系统或者网络原因删除失败。。";
+            }else{
+                msg ="恭喜小主，删除成功！！";
+            }
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/account").forward(request,response);
+    }
+
+    @RequestMapping("/account/add")
+    public void account_add_admin(String name,String password,HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        String msg = "";
+        if(StringUtils.isNullOrEmpty(name)||StringUtils.isNullOrEmpty(password)){
+            msg = "抱歉小主，添加失败，名字和密码都是必填项哟,请重新添加";
+        }else{
+            if(adminWorkService.judgeIsContainNameInAdminDao(name)){
+                msg = "抱歉小主，这个名称已经注册过了，请换个名字重新添加";
+            }else{
+                if(adminWorkService.addAccountToDao(name,password)>0){
+                    msg = "恭喜小主，添加成功！！";
+                }else{
+                    msg = "不好意思小主，由于系统或者网络原因，添加失败。";
+                }
+            }
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/account").forward(request,response);
+    }
 
 }

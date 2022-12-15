@@ -114,4 +114,27 @@ public class AdminWorkService {
     public int updateApplicationStatusToDao(String id, String status) {
         return applicationMapper.update(Integer.parseInt(id),status);
     }
+
+    public int updateAccountToDao(String name, String newPassword) {
+        return adminMapper.update(name,newPassword);
+    }
+
+    public boolean judgeIsContainNameInAdminDao(String name) {
+        if (StringUtils.isNullOrEmpty(name))return false;
+        List<Admin> adminList = adminMapper.getAdmins();
+        for (Admin admin : adminList) {
+            if (admin.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int addAccountToDao(String name, String password) {
+        return adminMapper.insert(new Admin(name,password));
+    }
+
+    public int deleteAccountByNameFromDao(String name) {
+        return adminMapper.delete(name);
+    }
 }

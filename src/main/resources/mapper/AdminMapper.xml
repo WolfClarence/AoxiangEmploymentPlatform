@@ -16,6 +16,6 @@
         delete from admin where name = #{name}
     </delete>
     <update id="update" parameterType="string">
-        update admin where name = #{name} set password= #{password}
+        update admin  set password= #{password} where name = #{name}
     </update>
 </mapper>

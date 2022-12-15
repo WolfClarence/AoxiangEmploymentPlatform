@@ -1,6 +1,7 @@
 package com.nwpu.mapper;
 
 import com.nwpu.pojo.Admin;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface AdminMapper {
     Admin getAdminByName(String name);
     int insert(Admin admin);
     int delete(String name);
-    int update(String name,String password);//只能修改密码，管理员的名字为主键
+    int update(@Param("name") String name, @Param("password") String password);//只能修改密码，管理员的名字为主键
 }

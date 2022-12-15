@@ -23,10 +23,22 @@ import java.util.List;
 public class AdminPageController {
     @Autowired
     AdminWorkService adminWorkService;
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入登录页
+     */
     @RequestMapping("/login")
     public String adminLogin(){
         return "adminPage/adminLogin";
     }
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入管理员工作页面
+     */
     @RequestMapping("/jobinfo")
     public String adminJobInformation(Model model){
         List<Job> jobs = adminWorkService.getAllJobsFromDao();
@@ -37,6 +49,12 @@ public class AdminPageController {
         model.addAttribute("areaList",allAreasFromDao);
         return "adminPage/adminJobInformation";
     }
+    /**
+     * @author GengXuelong
+     * <p> 函数功能描述如下:
+     * @Description:
+     *     进入管理员账号管理页面
+     */
     @RequestMapping("/account")
     public String adminAccount(Model model){
         List<Admin> adminList = adminWorkService.getAllAdminsFromDao();
