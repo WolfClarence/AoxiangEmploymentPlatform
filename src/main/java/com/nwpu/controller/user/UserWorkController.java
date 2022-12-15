@@ -1,9 +1,14 @@
 package com.nwpu.controller.user;
 
+import com.nwpu.pojo.Application;
+import com.nwpu.pojo.Job;
 import com.nwpu.pojo.Resume;
+import com.nwpu.pojo.User;
 import com.nwpu.service.user.UserWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletException;
@@ -43,7 +48,31 @@ public class UserWorkController {
         }
         request.setAttribute("msg",msg);
         request.getRequestDispatcher("/resume/edit").forward(request,response);
+    }
 
+    @RequestMapping("/jobdetail/{id}")
+    public String user_to_jobDetail(@PathVariable("id")int id, Model model){
+        Job job = userWorkService.getJobByIdFromDao(id);
+        model.addAttribute("job",job);
+        return "userPage/userJobDetail";
+    }
+    @RequestMapping("/jobdetail/application/{jobId}/{email}")
+    public void user_jobdetail_application(@PathVariable("jobId")int jobId,@PathVariable("email")String email,
+                                           HttpServletResponse response,HttpServletRequest request) throws ServletException, IOException {
+        User user = new User();
+        user.setEmail(email);
+        Job job = new Job();
+        job.setId(jobId);
+        Application application = new Application(0,user,job,"处理中");
+        String msg = "";
+        int res =  userWorkService.addApplicationToDao(application);
+        if(res>0){
+            msg = "恭喜小主，申请成功";
+        }else{
+            msg = "抱歉小主，由于系统或者网络原因，申请失败.";
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/jobdetail/"+jobId).forward(request,response);
 
 
     }

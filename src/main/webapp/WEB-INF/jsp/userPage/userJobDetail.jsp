@@ -50,6 +50,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
+        <p style="color: red">${msg}</p>
         <div class="job-detail-body">
             <div class="panel panel-info job-detail-item">
                 <div class="panel-heading">
@@ -132,7 +133,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <a href="" style="text-decoration: none;color: black">
+                <a href="/jobdetail/application/${job.id}/${userSession.email}" style="text-decoration: none;color: black">
                     <button type="button" class="btn btn-primary">确定</button>
                 </a>
             </div>

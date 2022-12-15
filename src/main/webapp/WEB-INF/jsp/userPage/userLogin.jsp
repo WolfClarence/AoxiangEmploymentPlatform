@@ -27,7 +27,7 @@
         <!--form-stars-here-->
         <div class="form-out">
             <h2>翱翔招聘平台</h2>
-            <form action="/login.do" method="post">
+            <form action="<c:url value="/login.do"/>" method="post">
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>

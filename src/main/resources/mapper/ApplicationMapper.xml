@@ -26,7 +26,7 @@
         select * from user where email = #{owner_email}
     </select>
     <insert id="insert" parameterType="application">
-        insert into application value (#{id},#{user.owner_email},#{job.getId()},#{status})
+        insert into application value (null,#{user.email},#{job.id},#{status})
     </insert>
     <delete id="delete" parameterType="int">
         delete from application where id = #{id}

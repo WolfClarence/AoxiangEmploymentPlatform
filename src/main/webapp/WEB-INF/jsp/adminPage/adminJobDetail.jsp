@@ -45,6 +45,7 @@
         </ul>
     </div>
     <div class="content content-is-open">
+        <p style="color:red;">${msg}</p>
         <div class="job-detail-body">
             <div class="panel panel-info job-detail-item">
                 <div class="panel-heading">
@@ -135,11 +136,12 @@
                 <h4 class="modal-title">修改职位</h4>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="/admin/job/update/${jobId}">
                     名称：
                     <input type="text" name="name" id="name" class="form-control">
                     类别：
                     <select class="form-control" name="kind" id="kind">
+                        <option value="${job.kind}">${job.kind}</option>
                         <c:forEach var="kindItem" items="${kindList}">
                             <option value="${kindItem}">${kindItem}</option>
                         </c:forEach>
@@ -148,6 +150,7 @@
                     <input type="text" name="company" id="company" class="form-control">
                     地区：
                     <select class="form-control" name="area" id="area">
+                        <option value="${job.area}">${job.area}</option>
                         <c:forEach var="areaItem" items="${areaList}">
                             <option value="${areaItem}">${areaItem}</option>
                         </c:forEach>
@@ -160,12 +163,13 @@
                     <textarea name="description" id="description" class="form-control"></textarea>
                     要求：
                     <textarea name="limit_condition" id="limit_condition" class="form-control"></textarea>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <input type="submit" class="btn btn-primary" value="提交"/>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">提交修改</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -181,7 +185,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <a href="" style="text-decoration: none;color: black">
+                <a href="/admin/job/delete/${jobId}" style="text-decoration: none;color: black">
                     <button type="button" class="btn btn-primary">删除</button>
                 </a>
             </div>
@@ -214,9 +218,9 @@
 <script>
     function update(name,kind,company,area,min_salary,max_salary,description,limit_condition) {
         $("#name").val(name);
-        $("#kind").val(kind);
+        // $("#kind").val(kind);
         $("#company").val(company);
-        $("#area").val(area);
+        // $("#area").val(area);
         $("#min_salary").val(min_salary);
         $("#max_salary").val(max_salary);
         $("#description").val(description);

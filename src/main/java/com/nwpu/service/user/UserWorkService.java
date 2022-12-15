@@ -41,4 +41,12 @@ public class UserWorkService {
     public int updateResumeInDao(Resume resume){
        return  resumeMapper.update(resume);
     }
+
+    public Job getJobByIdFromDao(int id) {
+        return jobMapper.getJobById(id);
+    }
+
+    public int addApplicationToDao(Application application) {
+        return applicationMapper.insert(application);
+    }
 }

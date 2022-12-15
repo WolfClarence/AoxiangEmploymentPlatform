@@ -4,6 +4,7 @@ import com.mysql.cj.util.StringUtils;
 import com.nwpu.pojo.*;
 import com.nwpu.service.admin.AdminWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -55,7 +57,11 @@ public class AdminWorkController {
     @RequestMapping("/jobdetail/{jobId}")
     public String job_tail_admin(@PathVariable("jobId") String jobId, Model model){
        Job job =  adminWorkService.getJobByIdFromDao(jobId);
+       List<String> areaList = adminWorkService.getAllAreasFromDao();
+       List<String> kindList = adminWorkService.getAllKindsFromDao();
        model.addAttribute("job",job);
+       model.addAttribute("areaList",areaList);
+       model.addAttribute("kindList",kindList);
         return "adminPage/adminJobDetail";
     }
 
@@ -79,7 +85,7 @@ public class AdminWorkController {
      * @author GengXuelong
      * <p> 函数功能描述如下:
      * @Description:
-     *     查看某一个申请人员得详情并处理其申请
+     *     查看某一个申请人员的详情并处理其申请
      */
     @RequestMapping("/jobdetail/employeedetail/{jobId}/{email}")
     public String job_detail_employ_detail_admin(@PathVariable("jobId") String jobId,
@@ -193,8 +199,40 @@ public class AdminWorkController {
         }
         request.setAttribute("msg",msg);
         request.getRequestDispatcher("/admin/jobinfo").forward(request,response);
-
-
     }
+    @RequestMapping("job/delete/{jobId}")
+    public void job_delete_admin(@PathVariable("jobId")int jobId,HttpServletResponse response,HttpServletRequest request) throws ServletException, IOException {
+        String msg = "";
+        boolean ok = true;
+        try{
+            adminWorkService.deleteJobByIdFromDao(jobId);
+        }catch (DataIntegrityViolationException e){
+            msg = "抱歉小主，已有用户申请该职位，暂时不能删除。";
+            ok = false;
+        }
+        if (ok)
+            msg = "删除成功";
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/jobinfo").forward(request,response);
+    }
+    @RequestMapping("job/update/{jobId}")
+    public void job_delete_admin(@PathVariable("jobId")int jobId,String name,String kind,String company,String area,int min_salary,int max_salary,String description,String limit_condition
+            ,HttpServletResponse response,HttpServletRequest request) throws ServletException, IOException {
+        Job job = new Job(jobId,name,kind,company,area,min_salary,max_salary,description,limit_condition);
+        String msg = "";
+        if(StringUtils.isNullOrEmpty(name)){
+            msg = "职位名不能为空哟,修改失败";
+        }else{
+            int res = adminWorkService.updateJobToDao(job);
+            if(res>0){
+                msg = "恭喜小主，修改成功";
+            }else {
+                msg = "抱歉，由于系统原因或网络原因导致修改失败";
+            }
+        }
+        request.setAttribute("msg",msg);
+        request.getRequestDispatcher("/admin/jobdetail/"+jobId).forward(request,response);
+    }
+
 
 }

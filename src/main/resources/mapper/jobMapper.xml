@@ -22,10 +22,10 @@
         insert into job value (null,#{name},#{min_salary},#{max_salary},#{description},#{company},#{area},#{kind},#{limit_condition})
     </insert>
     <delete id="delete" parameterType="int">
-        delete from job where id = #{id}
+        delete from job where id = #{id};
     </delete>
     <update id="update" parameterType="job">
-        update job set name=#{name},min_salary=#{min_salary},max_salary=#{max_salary},description=#{description},#{company},area=#{area},#{kind},limit_condition=#{limit_condition}  where id = #{id}
+        update job set name=#{name},min_salary=#{min_salary},max_salary=#{max_salary},description=#{description},company = #{company},area=#{area},kind =#{kind},limit_condition=#{limit_condition}  where id = #{id}
     </update>
 
 </mapper>

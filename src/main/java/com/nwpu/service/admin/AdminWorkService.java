@@ -141,4 +141,16 @@ public class AdminWorkService {
     public int addJobToDao(Job job) {
         return jobMapper.insert(job);
     }
+
+    public int updateJobToDao(Job job) {
+        return jobMapper.update(job);
+    }
+
+    public void deleteJobByIdFromDao(int jobId) {
+        jobMapper.delete(jobId);
+    }
+
+    public List<Application> getApplicationByJobId(int jobId) {
+        return applicationMapper.getApplicationByJobId(jobId);
+    }
 }

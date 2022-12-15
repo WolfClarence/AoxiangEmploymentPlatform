@@ -33,12 +33,14 @@ public class UserLoginController {
      *     实现登录功能
      */
     @RequestMapping("/login.do")
-    public String login_do(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model) throws ServletException, IOException {
+    public void login_do(HttpServletRequest request, HttpServletResponse response, String email, String password, Model model) throws ServletException, IOException {
         System.out.println(email+"::::::"+password);//测试
         User login = userLoginService.login(email, password);//实现登录的业务
         if(login==null){//登录失败后
-            model.addAttribute("msg","用户名或密码错误");
-            return "userPage/userLogin";
+//            model.addAttribute("msg","用户名或密码错误");
+            request.getSession().setAttribute("loginFail","用户名或密码错误");
+            request.getRequestDispatcher("/login").forward(request,response);
+//            return "userPage/userLogin";
         }
         /*
         登录成功后的操作，
@@ -47,7 +49,6 @@ public class UserLoginController {
          */
         request.getSession().setAttribute("userSession",login);
         request.getRequestDispatcher("/job").forward(request,response);
-        return null;
     }
 
     /**
