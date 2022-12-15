@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="z" uri="/aoxiang" %>
 <%--
   Created by IntelliJ IDEA.
   User: LonelyWolf
@@ -50,6 +51,7 @@
                     <a style="color: #5cb85c" href="<c:url value="/admin/login"/>">
                         管理员登录
                     </a>
+                    <z:loginFailTag/>
                 </p>
                 <input type="submit" value="Login">
             </form>
@@ -59,5 +61,6 @@
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>
+<c:import url="../component/fixedFooter.jsp"/>
 </body>
 </html>

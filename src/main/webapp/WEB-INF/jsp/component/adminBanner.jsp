@@ -22,6 +22,9 @@
         width: 100%;
         background: url("../../../static/image/banner.png") center/cover;
         height: 50px;
+        padding-top: 20px ;
+        padding-left: 200px;
+        color: black;
     }
 </style>
 </html>

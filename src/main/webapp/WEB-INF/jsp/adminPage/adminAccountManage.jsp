@@ -21,8 +21,7 @@
     <script src="${pageContext.request.contextPath}/static/js/modal.js"></script>
 </head>
 <body>
-<c:import url="../component/banner.jsp"/>
-${adminSession.name}
+<c:import url="../component/adminBanner.jsp"/>
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">管理员菜单</div>
@@ -117,7 +116,7 @@ ${adminSession.name}
         </div>
     </div>
 </div>
-<c:import url="../component/footer.jsp"/>
+<c:import url="../component/staticFooter.jsp"/>
 </body>
 <style>
     body {

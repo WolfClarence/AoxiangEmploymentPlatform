@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
 </head>
 <body>
-<c:import url="../component/banner.jsp"/>
+<c:import url="../component/userBanner.jsp"/>
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">用户菜单</div>
@@ -139,7 +139,7 @@
         </div>
     </div>
 </div>
-<c:import url="../component/footer.jsp"/>
+<c:import url="../component/staticFooter.jsp"/>
 </body>
 <style>
     input[type=button]{

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="z" uri="/aoxiang" %>
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
@@ -22,7 +23,6 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<c:import url="../component/banner.jsp"/>
 <div class="container">
     <div class="div-out-login">
         <!--form-stars-here-->
@@ -43,6 +43,12 @@
                     <input type="password" name="password" placeholder="请输入密码 " required=""
                            autocomplete="off"/>
                 </div>
+                <p class="p-bottom">
+                    <a style="color: #5cb85c" href="<c:url value="/login"/>">
+                        用户登录
+                    </a>
+                    <z:loginFailTag/>
+                </p>
                 <input type="submit" value="Login">
             </form>
         </div>
@@ -52,7 +58,7 @@
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>
-<c:import url="../component/footer.jsp"/>
+<c:import url="../component/fixedFooter.jsp"/>
 </body>
 <style>
     .form-sub input[type="text"]{

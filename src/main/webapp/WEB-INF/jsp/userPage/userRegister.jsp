@@ -21,13 +21,14 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
+
 <div class="container">
     <div class="div-out-login">
         <!--form-stars-here-->
         <div class="form-out">
             <h2>翱翔招聘平台</h2>
             <form action="<c:url value="/register.do"/>" method="post">
-                <p style="color: red">${msg}</p>
+
                 <div class="form-sub">
                     <div class="div-icon">
                         <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
@@ -49,6 +50,12 @@
                     <input type="password" name="password" id="first" placeholder="请输入密码 " required=""
                            autocomplete="off"/>
                 </div>
+                <p class="p-bottom">
+                    <a style="color: #5cb85c" href="<c:url value="/login"/>">
+                        返回登录
+                    </a>
+                    <span style="color: red">${msg}</span>
+                </p>
                 <input type="submit" value="Register">
             </form>
         </div>
@@ -57,6 +64,7 @@
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>
+<c:import url="../component/fixedFooter.jsp"/>
 </body>
 <style>
     .form-sub input[type="text"]{

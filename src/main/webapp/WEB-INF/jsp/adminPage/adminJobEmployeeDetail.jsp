@@ -20,7 +20,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<c:import url="../component/banner.jsp"/>
+<c:import url="../component/adminBanner.jsp"/>
 <div class="wrapper">
     <div class="sidebar">
         <div class="title">管理员菜单</div>
@@ -115,7 +115,7 @@
         </div>
     </div>
 </div>
-<c:import url="../component/footer.jsp"/>
+<c:import url="../component/staticFooter.jsp"/>
 </body>
 <style>
     body{
@@ -127,6 +127,9 @@
     }
     .resume-item{
         margin: 10px;
+        text-align: left;
+    }
+    p{
         text-align: left;
     }
 </style>

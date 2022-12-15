@@ -22,4 +22,12 @@
             <type>int</type>
         </attribute>
     </tag>
+    <tag>
+        <!-- 标签名 -->
+        <name>loginFailTag</name>
+        <!-- 标签助手类 -->
+        <tag-class>com.nwpu.tag.LoginFailTag</tag-class>
+        <!-- 标签的内容类型：empty表示空标签(使用空标签会报错，不能加入值)，jsp表示可以为任何合法的JSP元素 -->
+        <body-content>JSP</body-content>
+    </tag>
 </taglib>
