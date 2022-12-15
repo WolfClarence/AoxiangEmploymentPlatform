@@ -137,4 +137,8 @@ public class AdminWorkService {
     public int deleteAccountByNameFromDao(String name) {
         return adminMapper.delete(name);
     }
+
+    public int addJobToDao(Job job) {
+        return jobMapper.insert(job);
+    }
 }
