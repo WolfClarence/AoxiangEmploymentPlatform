@@ -2,10 +2,7 @@ package com.nwpu.service.admin;
 
 import com.mysql.cj.util.StringUtils;
 import com.nwpu.mapper.*;
-import com.nwpu.pojo.Application;
-import com.nwpu.pojo.Job;
-import com.nwpu.pojo.Resume;
-import com.nwpu.pojo.User;
+import com.nwpu.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +32,8 @@ public class AdminWorkService {
     KindMapper kindMapper;
     @Autowired
     AreaMapper areaMapper;
+    @Autowired
+    AdminMapper adminMapper;
 
     public List<Job> getAllJobsFromDao(){
         return jobMapper.getJobs();
@@ -51,6 +50,11 @@ public class AdminWorkService {
         LinkedList<String> areas = new LinkedList<>(areaMapper.getAreas());
         areas.addFirst(null);
         return areas;
+    }
+
+    public List<Admin> getAllAdminsFromDao(){
+        LinkedList<Admin> admins = new LinkedList<>(adminMapper.getAdmins());
+        return admins;
     }
 
     /**

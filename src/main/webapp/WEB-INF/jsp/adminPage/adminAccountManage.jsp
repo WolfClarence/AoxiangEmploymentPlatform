@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
     <meta charset="utf-8">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/modal.js"></script>
 </head>
 <body>
 <c:import url="../component/banner.jsp"/>
@@ -46,9 +47,100 @@
         </ul>
     </div>
     <div class="content content-is-open">
-        ${adminSession}
+        <ul class="list-unstyled">
+            <c:forEach var="admin" items="${adminList}">
+                <li class="show-list-item">
+                    <div>
+                        <span>用户名：${admin.name}</span>
+                        <span style="margin-left: 50px">密码：${admin.password}</span>
+                    </div>
+                </li>
+                <div style="margin-left: 50px">
+                    <a href="/admin/account/delete/${admin.name}" style="text-decoration: none;">
+                        <button class="btn">删除</button>
+                    </a>
+                    <button class="btn" data-toggle="modal" data-target="#updateModel"
+                            onclick="update('${admin.password}')">修改密码
+                    </button>
+                </div>
+            </c:forEach>
+        </ul>
+        <button class="btn" data-toggle="modal" data-target="#addModel">添加管理员
+        </button>
+        <%--${adminSession}--%>
+    </div>
+</div>
+<div class="modal fade" id="updateModel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    新密码：
+                    <input type="text" class="form-control" id="password">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addModel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加管理员</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    用户名：
+                    <input type="text" class="form-control" id="username">
+                    密码：
+                    <input type="text" class="form-control" id="pwd">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" style="margin-left: 30px">提交</button>
+            </div>
+        </div>
     </div>
 </div>
 <c:import url="../component/footer.jsp"/>
 </body>
+<style>
+    body {
+        color: #000;
+    }
+
+    .show-list-item {
+        font-size: 20px;
+        color: #4cae4c;
+        margin: 8px;
+    }
+
+    .show-list-item div {
+        background: linear-gradient(to right, royalblue, plum) center/cover;
+        width: 100%;
+        height: 50px;
+        color: #5bc0de;
+        padding: 10px;
+        font-size: 25px;
+    }
+    button{
+        background: #5bc0de;
+        color: white;
+    }
+</style>
+<script>
+    function update(password) {
+        $("#password").val(password);
+    }
+</script>
 </html>

@@ -9,11 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>用户登录</title>
-</head>
-<body>
-<html>
-<head>
     <title>用户登录页</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -65,7 +60,5 @@
 <div class="bigLabel">
     <p>翱翔招聘平台</p>
 </div>
-</body>
-</html>
 </body>
 </html>

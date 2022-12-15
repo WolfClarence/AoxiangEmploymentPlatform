@@ -1,5 +1,6 @@
 package com.nwpu.controller.admin;
 
+import com.nwpu.pojo.Admin;
 import com.nwpu.pojo.Job;
 import com.nwpu.service.admin.AdminWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,9 @@ public class AdminPageController {
         return "adminPage/adminJobInformation";
     }
     @RequestMapping("/account")
-    public String adminAccount(){
+    public String adminAccount(Model model){
+        List<Admin> adminList = adminWorkService.getAllAdminsFromDao();
+        model.addAttribute("adminList",adminList);
         return "adminPage/adminAccountManage";
     }
 

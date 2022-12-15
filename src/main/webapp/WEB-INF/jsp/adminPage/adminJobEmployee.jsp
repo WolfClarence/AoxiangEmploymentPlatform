@@ -49,9 +49,10 @@
         <div class="job-detail-body">
             <ul class="list-unstyled">
                 <c:forEach items="${userList}" var="employee">
-                    <li class="show-list-item">
-                        <a href="/admin/jobdetail/employeedetail/${jobId}/${employee.email}">
-                            <label>
+                    <li class="show-list-item" style="padding: 0">
+                        <a href="/admin/jobdetail/employeedetail/${jobId}/${employee.email}"
+                        style="margin: 0">
+                            <label style="width: 100%;font-size: 30px">
                                     姓名:${employee.name} 邮箱:${employee.email}
                             </label>
                         </a>
@@ -63,10 +64,24 @@
                     <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                 </a>
             </div>
-
         </div>
     </div>
 </div>
 <c:import url="../component/footer.jsp"/>
 </body>
+<style>
+    .show-list-item{
+        font-size: 20px;
+        color: #4cae4c;
+        margin: 8px;
+    }
+    .show-list-item a label{
+        background: linear-gradient(to right,royalblue,plum) center/cover;
+        width: 100%;
+        height: 50px;
+        color: #5bc0de;
+        padding: 10px;
+        font-size: 25px;
+    }
+</style>
 </html>
