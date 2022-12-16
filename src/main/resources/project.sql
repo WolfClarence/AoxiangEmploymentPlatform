@@ -1,5 +1,12 @@
 use web;
 drop table if exists admin;
+drop table if exists resume;
+drop table if exists application;
+drop table if exists job;
+drop table if exists kind;
+drop table if exists area;
+drop table if exists user;
+
 create table admin
 (
     name     varchar(50) not null
@@ -15,7 +22,6 @@ insert into admin values
 ('孟辰宇','123456'),
 ('张三','123456');
 
-drop table if exists kind;
 create table kind
 (
     name varchar(50) not null
@@ -34,16 +40,16 @@ insert into kind values
 ('医学药理类'),
 ('交通运输类');
 
-drop table if exists area;
+
 create table area
 (
     name varchar(50) not null
         primary key
 );
 insert into area values
-('哈尔滨'),('长春'),('沈阳'),('北京'),('天津'),('石家庄'),('呼和浩特'),('太原'),('郑州'),('济南'),('合肥'),('南京'),('上海')('杭州'),('南昌'),('福州'),('台北'),('广州'),('深圳'),('海口'),('南宁'),('贵阳'),('长沙'),('武汉'),('贵阳'),('重庆'),('昆明'),('成都'),('西安'),('西宁'),('拉萨'),('乌鲁木齐');
+('哈尔滨'),('长春'),('沈阳'),('北京'),('天津'),('石家庄'),('呼和浩特'),('太原'),('郑州'),('济南'),('合肥'),('南京'),('上海'),('杭州'),('南昌'),('福州'),('台北'),('广州'),('深圳'),('海口'),('南宁'),('贵阳'),('长沙'),('武汉'),('重庆'),('昆明'),('成都'),('西安'),('西宁'),('拉萨'),('乌鲁木齐');
 
-drop table if exists job;
+
 create table job
 (
     id              int auto_increment
@@ -68,7 +74,6 @@ insert into job values
 (8,'卡车司机',1000,2000,'这是一个很8般的工作','福州交通运输有限公司','福州','交通运输类','一本'),
 (9,'外科医生',1000,2000,'这是一个很9般的工作','首都第三医院','北京','医学药理类','一本');
 
-drop table if exists user;
 create table user
 (
     email    varchar(50) not null
@@ -85,7 +90,6 @@ insert into user values
 ('003@qq.com','高明','123456');
 
 
-drop table if exists resume;
 create table resume
 (
     owner_email varchar(50)  not null
@@ -107,12 +111,14 @@ create table resume
         foreign key (owner_email) references user (email)
 );
 insert into resume values
-('123@qq.com','耿雪龙',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年')
+('123@qq.com','耿雪龙',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人'),
+('456@qq.com','宋宇轩',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人'),
+('789@qq.com','文睿',0,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人'),
+('001@qq.com','陈鑫龙',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人'),
+('002@qq.com','孟辰宇',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人'),
+('003@qq.com','高明',1,'汉族',21,'软件工程','搬砖，送外卖，或者Java开发','西北男子学校','13933322112','3349495429@qq.com','吃，喝','于2020年获得睡觉大赛一等奖','于2022年作为西安歌颂比赛志愿者','是一个人');
 
 
-
-
-drop table if exists application;
 create table application
 (
     id          int auto_increment
@@ -123,4 +129,17 @@ create table application
     constraint application_job__fk
         foreign key (job_id) references job (id)
 );
+insert into application values
+(1,'123@qq.com',1,'处理中'),
+(2,'123@qq.com',2,'处理中'),
+(3,'123@qq.com',3,'处理中'),
+(4,'123@qq.com',4,'处理中'),
+(5,'456@qq.com',1,'处理中'),
+(6,'456@qq.com',2,'处理中'),
+(7,'456@qq.com',3,'处理中'),
+(8,'456@qq.com',4,'处理中'),
+(9,'789@qq.com',1,'处理中'),
+(10,'789@qq.com',2,'处理中'),
+(11,'789@qq.com',3,'处理中'),
+(12,'789@qq.com',4,'处理中');
 

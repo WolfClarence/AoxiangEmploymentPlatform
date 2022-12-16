@@ -52,7 +52,7 @@
                     <li class="show-list-item">
                         <a href="/admin/jobdetail/employeedetail/${jobId}/${employee.email}"
                         style="margin: 0">
-                            <label style="width: 100%;font-size: 30px">
+                            <label style="cursor: pointer!important;" style="width: 100%;font-size: 30px">
                                     姓名:${employee.name} 邮箱:${employee.email}
                             </label>
                         </a>

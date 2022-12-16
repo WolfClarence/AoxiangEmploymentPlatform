@@ -108,7 +108,7 @@
 
                 </div>
                 <div style="margin: 10px">
-                    <a href="/admin/jobdetail/${jobId}" style="margin-left: 20px">
+                    <a href="/admin/jobdetail/employee/${jobId}" style="margin-left: 20px">
                         <input type="button" class="btn" style="color: white;background: #5bc0de;" value="返回"/>
                     </a>
                 </div>
