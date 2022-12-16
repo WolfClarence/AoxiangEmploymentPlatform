@@ -1,0 +1,8 @@
+.index-banner-top {
+    width: 100%;
+    background: url("../image/banner.png") center/cover;
+    height: 50px;
+    padding-top: 20px ;
+    padding-left: 200px;
+    color: black;
+}

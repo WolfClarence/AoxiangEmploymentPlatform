@@ -11,20 +11,11 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/banner.css">
 </head>
 <body>
 <div class="index-banner-top">
     <z:welcomeTag type="0"/>
 </div>
 </body>
-<style>
-    .index-banner-top {
-        width: 100%;
-        background: url("../../../static/image/banner.png") center/cover;
-        height: 50px;
-        padding-top: 20px ;
-        padding-left: 200px;
-        color: black;
-    }
-</style>
 </html>

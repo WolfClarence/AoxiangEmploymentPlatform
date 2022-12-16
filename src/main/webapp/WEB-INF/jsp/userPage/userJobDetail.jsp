@@ -149,9 +149,15 @@
 <c:import url="../component/staticFooter.jsp"/>
 </body>
 <style>
+    body{
+        color: black;
+    }
     input[type=button]{
         background: #5bc0de;
         color: white;
+    }
+    p{
+        text-align: left;
     }
 </style>
 </html>

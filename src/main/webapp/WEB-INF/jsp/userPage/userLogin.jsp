@@ -51,9 +51,9 @@
                     <a style="color: #5cb85c" href="<c:url value="/admin/login"/>">
                         管理员登录
                     </a>
-                   <div style="color:red;">
-                <z:loginFailTag/>
-                    </div>
+                <div style="color:red;">
+                    <z:loginFailTag/>
+                </div>
                 <input type="submit" value="Login">
             </form>
         </div>

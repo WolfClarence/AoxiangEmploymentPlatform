@@ -57,7 +57,7 @@
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">类型:</div>
                     <div class="col-md-1">
-                        <select name="kind" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                        <select name="kind" style="width: 100px;height: 35px;" class="form-control">
                             <c:forEach var="kindItem" items="${kindList}">
                                 <option value="${kindItem}">${kindItem}</option>
                             </c:forEach>
@@ -67,7 +67,7 @@
                 <div class="col-md-3">
                     <div class="col-md-5" style="font-size: 20px;padding-top: 5px">地点:</div>
                     <div class="col-md-1" >
-                        <select name="area" style="font-size: 25px;width: 100px;height: 35px;background: #5bc0de;color: white">
+                        <select name="area" style="width: 100px;height: 35px;" class="form-control">
                             <c:forEach var="areaItem" items="${areaList}">
                                 <option value="${areaItem}">${areaItem}</option>
                             </c:forEach>
@@ -85,13 +85,30 @@
                 </div>
             </div>
         </form>
-        <ul   class="list-unstyled">
+        <ul class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
-                <li   class="show-list-item">
-                    <a  href="/jobdetail/${job.id}">
-                        <label style="cursor: pointer!important;">
-                                ${job.area} ${job.kind} ${job.company} ${job.name}
-                        </label>
+                <li class="show-list-item">
+                    <a href="/jobdetail/${job.id}" style="cursor: pointer">
+                        <div class="panel panel-success shadow">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            ${job.name} [${job.area}]
+                                    </div>
+                                    <div class="col-md-6">
+                                            ${job.company}
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 12px">
+                                    <div class="col-md-6" style="color: #fe574a">${job.min_salary}~${job.max_salary}</div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row" style="margin-top: 12px">
+                                    <div class="col-md-6">${job.kind}</div>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </li>
             </c:forEach>
@@ -109,6 +126,15 @@
         color: #4cae4c;
         margin: 8px;
     }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: #50e1bf;
+    }
+    div.shadow:hover{
+        box-shadow: -3px 3px 5px #888888;
+    }
     .show-list-item a label{
         background: linear-gradient(to right,royalblue,plum) center/cover;
         width: 100%;
@@ -116,6 +142,9 @@
         color: #5bc0de;
         padding: 10px;
         font-size: 25px;
+    }
+    .show-list-item a label:hover{
+        background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;
     }
 </style>
 </html>
