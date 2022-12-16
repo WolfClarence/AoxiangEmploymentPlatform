@@ -60,7 +60,7 @@
                 </li>
                 <div style="margin-left: 50px">
                     <a href="/admin/account/delete/${admin.name}" style="text-decoration: none;">
-                        <button class="btn" data-toggle="modal" data-target="#updateModal">删除</button>
+                        <button class="btn">删除</button>
                     </a>
                     <button class="btn" data-toggle="modal" data-target="#updateModal"
                             onclick="update('${admin.password}','${admin.name}')">修改密码
