@@ -48,6 +48,8 @@
     </div>
     <div class="content content-is-open">
         <p style="color: red;">${msg}</p>
+        <button class="btn" data-toggle="modal" data-target="#addModal">添加管理员
+        </button>
         <ul class="list-unstyled">
             <c:forEach var="admin" items="${adminList}">
                 <li class="show-list-item">
@@ -58,20 +60,17 @@
                 </li>
                 <div style="margin-left: 50px">
                     <a href="/admin/account/delete/${admin.name}" style="text-decoration: none;">
-                        <button class="btn">删除</button>
+                        <button class="btn" data-toggle="modal" data-target="#updateModal">删除</button>
                     </a>
-                    <button class="btn" data-toggle="modal" data-target="#updateModel"
+                    <button class="btn" data-toggle="modal" data-target="#updateModal"
                             onclick="update('${admin.password}','${admin.name}')">修改密码
                     </button>
                 </div>
             </c:forEach>
         </ul>
-        <button class="btn" data-toggle="modal" data-target="#addModel">添加管理员
-        </button>
-        <%--${adminSession}--%>
     </div>
 </div>
-<div class="modal fade" id="updateModel" tabindex="-1">
+<div class="modal fade" id="updateModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -89,11 +88,10 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>
-<div class="modal fade" id="addModel" tabindex="-1">
+<div class="modal fade" id="addModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

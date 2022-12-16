@@ -121,11 +121,6 @@
     body{
         color: black;
     }
-    .show-list-item{
-        font-size: 20px;
-        color: #4cae4c;
-        margin: 8px;
-    }
     a{
         text-decoration: none;
     }
@@ -134,14 +129,6 @@
     }
     div.shadow:hover{
         box-shadow: -3px 3px 5px #888888;
-    }
-    .show-list-item a label{
-        background: linear-gradient(to right,royalblue,plum) center/cover;
-        width: 100%;
-        height: 50px;
-        color: #5bc0de;
-        padding: 10px;
-        font-size: 25px;
     }
     .show-list-item a label:hover{
         background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;

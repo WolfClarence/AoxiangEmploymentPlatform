@@ -93,7 +93,7 @@
         </div>
         <ul class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
-                <li    class="show-list-item">
+                <li class="show-list-item">
                     <a  href="/admin/jobdetail/${job.id}">
                         <div class="panel panel-success shadow">
                             <div class="panel-body">

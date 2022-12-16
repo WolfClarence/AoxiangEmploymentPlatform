@@ -214,6 +214,9 @@
         color: white;
         background: #5bc0de;
     }
+    p{
+        text-align: left;
+    }
 </style>
 <script>
     function update(name,kind,company,area,min_salary,max_salary,description,limit_condition) {

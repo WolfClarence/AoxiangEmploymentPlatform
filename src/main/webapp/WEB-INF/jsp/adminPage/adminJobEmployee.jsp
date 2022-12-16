@@ -83,5 +83,8 @@
         padding: 10px;
         font-size: 25px;
     }
+    .show-list-item a label:hover{
+        background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;
+    }
 </style>
 </html>
