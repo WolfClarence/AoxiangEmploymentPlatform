@@ -1,6 +1,5 @@
 package com.nwpu.mapper;
 
-import com.nwpu.pojo.Admin;
 import com.nwpu.pojo.Resume;
 
 /**
@@ -13,7 +12,7 @@ import com.nwpu.pojo.Resume;
  */
 public interface ResumeMapper {
     Resume getResumeByOwner_email(String email);
-    int insert(Admin admin);
+    int insert(Resume resume);
     int delete(String email);//简历的主键为用户的注册邮箱
     int update(Resume resume);
 }

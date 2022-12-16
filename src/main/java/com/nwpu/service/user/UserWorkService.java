@@ -79,4 +79,13 @@ public class UserWorkService {
     public List<String> getAllAreasFromDao() {
         return adminWorkService.getAllAreasFromDao();
     }
+
+    public boolean exitUserResume(String owner_email) {
+        Resume resumeByOwner_email = resumeMapper.getResumeByOwner_email(owner_email);
+        return resumeByOwner_email!=null;
+    }
+
+    public int addResumeToDao(Resume resume) {
+        return resumeMapper.insert(resume);
+    }
 }

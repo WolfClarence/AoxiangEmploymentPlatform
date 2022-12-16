@@ -1,7 +1,6 @@
 package com.nwpu.mapper.impl;
 
 import com.nwpu.mapper.ResumeMapper;
-import com.nwpu.pojo.Admin;
 import com.nwpu.pojo.Resume;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,8 @@ public class ResumeMapperImpl implements ResumeMapper {
     }
 
     @Override
-    public int insert(Admin admin) {
-        return sqlSessionTemplate.getMapper(ResumeMapper.class).insert(admin);
+    public int insert(Resume resume) {
+        return sqlSessionTemplate.getMapper(ResumeMapper.class).insert(resume);
     }
 
     @Override

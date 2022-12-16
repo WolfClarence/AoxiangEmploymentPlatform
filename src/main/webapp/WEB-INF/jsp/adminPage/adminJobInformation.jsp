@@ -93,9 +93,9 @@
         </div>
         <ul class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
-                <li class="show-list-item">
-                    <a href="/admin/jobdetail/${job.id}">
-                        <label>
+                <li    class="show-list-item">
+                    <a  href="/admin/jobdetail/${job.id}">
+                        <label style="cursor: pointer!important;">
                                 ${job.area} ${job.kind} ${job.company} ${job.name}
                         </label>
                     </a>
@@ -113,7 +113,7 @@
                 <h4 class="modal-title">添加职位</h4>
             </div>
             <div class="modal-body">
-                <form action="/admin/job/add">
+                <form action="<c:url value="/admin/job/add"/>">
                     名称：
                     <input type="text" name="name" class="form-control">
                     类别：

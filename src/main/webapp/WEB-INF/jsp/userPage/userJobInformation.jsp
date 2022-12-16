@@ -85,11 +85,11 @@
                 </div>
             </div>
         </form>
-        <ul class="list-unstyled">
+        <ul   class="list-unstyled">
             <c:forEach items="${jobList}" var="job">
-                <li class="show-list-item">
-                    <a href="/jobdetail/${job.id}">
-                        <label>
+                <li   class="show-list-item">
+                    <a  href="/jobdetail/${job.id}">
+                        <label style="cursor: pointer!important;">
                                 ${job.area} ${job.kind} ${job.company} ${job.name}
                         </label>
                     </a>

@@ -1,6 +1,8 @@
 package com.nwpu.service.user;
 
+import com.nwpu.mapper.ResumeMapper;
 import com.nwpu.mapper.UserMapper;
+import com.nwpu.pojo.Resume;
 import com.nwpu.pojo.User;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,8 @@ public class UserLoginService {
      */
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private ResumeMapper resumeMapper;
 
     /**
      * @author GengXuelong
@@ -59,5 +63,9 @@ public class UserLoginService {
      */
     public int addUserToDao(User user1) {
         return userMapper.insert(user1);
+    }
+
+    public void addResumeToDao(Resume resume) {
+        resumeMapper.insert(resume);
     }
 }

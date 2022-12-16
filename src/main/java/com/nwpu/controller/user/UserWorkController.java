@@ -79,9 +79,16 @@ public class UserWorkController {
 
         Resume resume = new Resume(owner_email,name,sex,nation,age
         ,profession,intention,school,phone,email,skill,award,practice,description);
-        int res = userWorkService.updateResumeInDao(resume);
+        int res;
+        if(userWorkService.exitUserResume(owner_email)){
+            System.out.println("已存在该简历");
+             res = userWorkService.updateResumeInDao(resume);
+        }else{
+            res = userWorkService.addResumeToDao(resume);
+        }
+
         String msg;
-        if(res<0){
+        if(res<=0){
             msg = "更新失败，请重试";
         }else{
             msg = "更新成功！";

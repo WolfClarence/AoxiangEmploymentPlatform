@@ -16,6 +16,12 @@
     <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/modal.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/navigation.css">
+    <style>
+        .modal-body ,.panel-body{
+            color: #1f181b;
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
 <c:import url="../component/userBanner.jsp"/>

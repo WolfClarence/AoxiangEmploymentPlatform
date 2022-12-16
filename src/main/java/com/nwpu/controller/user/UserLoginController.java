@@ -1,6 +1,7 @@
 package com.nwpu.controller.user;
 
 import com.mysql.cj.util.StringUtils;
+import com.nwpu.pojo.Resume;
 import com.nwpu.pojo.User;
 import com.nwpu.service.user.UserLoginService;
 import org.springframework.stereotype.Controller;
@@ -103,6 +104,9 @@ public class UserLoginController {
                     //注册成功
                 }else{
                     msg = "恭喜小主，注册成功,赶快去登录吧！";
+                    Resume resume = new Resume();
+                    resume.setOwner_email(email);
+                    userLoginService.addResumeToDao(resume);
                 }
             }
         }
