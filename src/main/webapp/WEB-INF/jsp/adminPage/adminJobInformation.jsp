@@ -173,7 +173,6 @@
 
     .show-list-item {
         font-size: 20px;
-        color: #4cae4c;
         margin: 8px;
     }
     a{

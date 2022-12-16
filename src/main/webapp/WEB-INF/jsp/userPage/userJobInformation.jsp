@@ -130,8 +130,8 @@
     div.shadow:hover{
         box-shadow: -3px 3px 5px #888888;
     }
-    .show-list-item a label:hover{
-        background: linear-gradient(to right, #d5d20c, #c9dda0) center/cover;
+    .show-list-item {
+        font-size: 20px;
     }
 </style>
 </html>
